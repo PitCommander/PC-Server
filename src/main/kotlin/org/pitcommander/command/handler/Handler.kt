@@ -17,7 +17,14 @@ import org.pitcommander.command.Reply
  * @version 5/28/17
  */
 abstract class Handler {
-    abstract fun handle(command: Command): Reply
+    fun handle(command: Command): Reply {
+        reply = Replies.NONE
+        payload.clear()
+
+        handleImpl(command)
+        return Reply(reply, payload)
+    }
+    abstract protected fun handleImpl(command: Command)
 
     var reply = Replies.NONE
     val payload = HashMap<String, Any>()

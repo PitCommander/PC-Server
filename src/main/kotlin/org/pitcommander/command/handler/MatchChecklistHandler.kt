@@ -19,7 +19,7 @@ import org.pitcommander.container.checklist.MatchChecklistContainer
  * @version 5/28/17
  */
 object MatchChecklistHandler : Handler() {
-    override fun handle(command: Command): Reply {
+    override fun handleImpl(command: Command) {
         when (command.id) {
             Commands.CHECKLIST_FETCH_MATCH -> {
                 reply = Replies.CHECKLIST_DATA_MATCH
@@ -37,7 +37,7 @@ object MatchChecklistHandler : Handler() {
                         reply = Replies.CHECKLIST_VALUE_MATCH
                     } else {
                         reply = Replies.GENERAL_FAIL
-                        payload.put("message", "Item $name does not exist!")
+                        payload.put("message", "Item '$name' does not exist!")
                     }
                 } else {
                     reply = Replies.GENERAL_FAIL
@@ -49,10 +49,10 @@ object MatchChecklistHandler : Handler() {
                 if (name != null) {
                     if (MatchChecklistContainer.addCheckbox(name, false)) {
                         reply = Replies.GENERAL_SUCCESS
-                        payload.put("message", "Item $name added successfully")
+                        payload.put("message", "Item '$name' added successfully")
                     } else {
                         reply = Replies.GENERAL_FAIL
-                        payload.put("message", "Item $name is already on the list!")
+                        payload.put("message", "Item '$name' is already on the list!")
                     }
                 } else {
                     reply = Replies.GENERAL_FAIL
@@ -64,10 +64,10 @@ object MatchChecklistHandler : Handler() {
                 if (name != null) {
                     if (MatchChecklistContainer.removeCheckbox(name)) {
                         reply = Replies.GENERAL_SUCCESS
-                        payload.put("message", "Item $name removed successfully")
+                        payload.put("message", "Item '$name' removed successfully")
                     } else {
                         reply = Replies.GENERAL_FAIL
-                        payload.put("message", "Item $name does not exist!")
+                        payload.put("message", "Item '$name' does not exist!")
                     }
                 } else {
                     reply = Replies.GENERAL_FAIL
@@ -80,10 +80,10 @@ object MatchChecklistHandler : Handler() {
                 if (name != null && value != null) {
                     if (MatchChecklistContainer.setChecked(name, value)) {
                         reply = Replies.GENERAL_ACK
-                        payload.put("message", "Item $name set to $value successfully")
+                        payload.put("message", "Item '$name' set to $value successfully")
                     } else {
                         reply = Replies.GENERAL_FAIL
-                        payload.put("message", "Item $name does not exist!")
+                        payload.put("message", "Item '$name' does not exist!")
                     }
                 } else {
                     reply = Replies.GENERAL_FAIL
@@ -91,7 +91,5 @@ object MatchChecklistHandler : Handler() {
                 }
             }
         }
-
-        return Reply(reply, payload)
     }
 }

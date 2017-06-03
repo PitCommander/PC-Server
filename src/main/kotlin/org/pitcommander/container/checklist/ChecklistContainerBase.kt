@@ -21,7 +21,7 @@ open class ChecklistContainerBase(@Transient private val name: String): Containe
 
     val boxes = Vector<Checkbox>()
 
-    private var allChecked = true
+    private var allChecked = false
 
     fun getAllChecked(): Boolean {
         synchronized(lock) {

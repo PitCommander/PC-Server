@@ -20,7 +20,7 @@ import org.pitcommander.socket.AnnounceSock
  * @version 6/2/17
  */
 object TvHandler : Handler() {
-    override fun handle(command: Command): Reply {
+    override fun handleImpl(command: Command) {
         when (command.id) {
             Commands.TV_SET -> {
                 val toSend = TvAnnouncement()
@@ -30,7 +30,5 @@ object TvHandler : Handler() {
                 payload.put("message", "TV packet reflected you goon lel top kek")
             }
         }
-
-        return Reply(reply, payload)
     }
 }
