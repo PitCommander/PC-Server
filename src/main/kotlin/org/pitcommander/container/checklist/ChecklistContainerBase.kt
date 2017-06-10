@@ -29,8 +29,8 @@ open class ChecklistContainerBase(@Transient private val name: String): Containe
         }
     }
 
-    private fun checkAll() {
-        allChecked = boxes.all { it.value }
+    protected fun checkAll() {
+        allChecked = boxes.isNotEmpty() && boxes.all { it.value }
         checkAllTasks()
     }
 

@@ -2,10 +2,12 @@ package org.pitcommander
 
 import ch.qos.logback.classic.Level
 import org.pitcommander.config.ActiveConfig
+import org.pitcommander.container.GeneralContainer
 import org.pitcommander.container.MatchContainer
 import org.pitcommander.container.checklist.ChecklistContainerBase
 import org.pitcommander.container.checklist.MatchChecklistContainer
 import org.pitcommander.container.checklist.SafetyChecklistContainer
+import org.pitcommander.runtime.GeneralExecutor
 import org.pitcommander.runtime.TbaPoller
 import org.pitcommander.runtime.TimeTicker
 import org.pitcommander.socket.AnnounceSock
@@ -26,7 +28,7 @@ import org.slf4j.LoggerFactory
  * @version 5/24/17
  */
 
-private const val VERSION = 1.0
+private const val VERSION = "1.4-SNAPSHOT"
 
 fun String.stripNum(): String {
     return this.replace(Regex("[0-9]"), "")
@@ -58,20 +60,38 @@ fun main(args: Array<String>) {
     CommandSock.setup(5801)
 
     //RUNTIME START
-    Thread(CommandSock, "sock.command").start()
-    Thread(AnnounceSock, "sock.announce").start()
-    Thread(TimeTicker, "runtime.ticker").start()
-    Thread(TbaPoller, "runtime.poller").start()
+    val sockCommand = Thread(CommandSock, "sock.command")
+    val sockAnnounce = Thread(AnnounceSock, "sock.announce")
+    val runtimeTicker = Thread(TimeTicker, "runtime.ticker")
+    val runtimePoller = Thread(TbaPoller, "runtime.poller")
+
+    sockCommand.start()
+    sockAnnounce.start()
+    runtimeTicker.start()
+    runtimePoller.start()
 
     //CHECKLIST INIT
     MatchChecklistContainer.init()
     SafetyChecklistContainer.init()
 
+    //CONTAINER INIT
+    GeneralContainer.setTeamNumber(ActiveConfig.settings.teamNumber)
 
-    while (true) {
-        try {
-            Thread.sleep(1000L)
-        } catch (e: Exception) {}
+    keepAlive@ while (true) {
+        when (readLine()?.toUpperCase()) {
+            "Q" -> break@keepAlive
+        }
     }
+
+    logger.info("Shutting down")
+
+    ActiveConfig.toFile()
+
+    runtimePoller.run {interrupt(); join()}
+    runtimeTicker.run {interrupt(); join()}
+    sockCommand.run {interrupt(); join()}
+    sockAnnounce.run {interrupt(); join()}
+
+    GeneralExecutor.shutdown()
 
 }

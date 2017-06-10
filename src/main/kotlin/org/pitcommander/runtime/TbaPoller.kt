@@ -5,9 +5,11 @@ import net.came20.tba4j.data.Event
 import net.came20.tba4j.data.Match
 import net.came20.tba4j.exception.TBAException
 import org.pitcommander.config.ActiveConfig
+import org.pitcommander.container.GeneralContainer
 import org.pitcommander.container.MatchContainer
 import org.pitcommander.stripNum
 import org.pitcommander.util.Sorters
+import org.slf4j.LoggerFactory
 import java.text.SimpleDateFormat
 import java.time.Instant
 import java.util.*
@@ -30,6 +32,8 @@ object TbaPoller : Runnable {
     private var interval = 30000L
     private val teamNumber = ActiveConfig.settings.teamNumber
 
+    private val logger = LoggerFactory.getLogger(javaClass)
+
     fun setup(interval: Long) {
         this.interval = interval
     }
@@ -42,6 +46,7 @@ object TbaPoller : Runnable {
 
     override fun run() {
         while (!Thread.interrupted()) {
+            logger.debug("Polling!")
             if (ActiveConfig.settings.eventCode.toLowerCase() != "dynamic") { //If the configured event is not "auto select"
                 activeEvent = ActiveConfig.settings.eventCode //Set the event code
             } else { //The configuration calls for auto select
@@ -54,6 +59,8 @@ object TbaPoller : Runnable {
                     activeEvent = events.first().eventCode.stripNum() //Mark the active event as the first event
                 }
             }
+            logger.debug("Found event: $activeEvent")
+            GeneralContainer.setEvent(activeEvent) //Notify clients of the active event
             try {
                 matches = tba.TeamRequests.getTeamMatches(teamNumber, activeEvent) //Pull team matches for the event
                 allMatches = tba.EventRequests.getEventMatches(activeEvent) //Pull all matches for the event
@@ -61,8 +68,9 @@ object TbaPoller : Runnable {
             } catch (e: TBAException) {
                 e.printStackTrace()
             }
+            logger.debug("Matches calculated")
             try {
-                Thread.sleep(interval);
+                Thread.sleep(interval)
             } catch (e: InterruptedException) {
                 Thread.currentThread().interrupt()
             }

@@ -4,6 +4,7 @@ import org.pitcommander.command.Command
 import org.pitcommander.command.Commands
 import org.pitcommander.command.Replies
 import org.pitcommander.command.Reply
+import org.pitcommander.config.ActiveConfig
 import org.pitcommander.container.checklist.SafetyChecklistContainer
 
 /*
@@ -48,6 +49,22 @@ object SafetyChecklistHandler : Handler() {
                     if (SafetyChecklistContainer.addCheckbox(name, false)) {
                         reply = Replies.GENERAL_SUCCESS
                         payload.put("message", "Item '$name' added successfully")
+                    } else {
+                        reply = Replies.GENERAL_FAIL
+                        payload.put("message", "Item '$name' is already on the list!")
+                    }
+                } else {
+                    reply = Replies.GENERAL_FAIL
+                    payload.put("message", "Invalid operation")
+                }
+            }
+            Commands.CHECKLIST_ADD_PERSISTENT_SAFETY -> {
+                val name = command.payload["name"] as? String
+                if (name != null) {
+                    if (SafetyChecklistContainer.addCheckbox(name, false)) {
+                        (ActiveConfig.settings.safetyChecklist as MutableList).add(name)
+                        reply = Replies.GENERAL_SUCCESS
+                        payload.put("message", "Persistent item '$name' added successfully")
                     } else {
                         reply = Replies.GENERAL_FAIL
                         payload.put("message", "Item '$name' is already on the list!")

@@ -18,7 +18,7 @@ import java.io.File
  */
 
 object ActiveConfig {
-    var settings = ConfigRoot(0, "dynamic", 300, "", listOf(), listOf()); private set
+    var settings = ConfigRoot(0, "dynamic", 300, "", true, listOf(), listOf()); private set
     private val gson = GsonBuilder()
                         .setPrettyPrinting()
                         .setLenient()
@@ -36,11 +36,23 @@ object ActiveConfig {
             } catch(e: Exception) {}
         }
     }
+
+    fun toFile(fileName: String = "config.json") {
+        val file = File(fileName)
+        if (!file.exists()) {
+            if (file.createNewFile()) {
+                file.writeText(gson.toJson(settings))
+            }
+        } else {
+            file.writeText(gson.toJson(settings))
+        }
+    }
 }
 
 data class ConfigRoot(val teamNumber: Int,
                       val eventCode: String,
                       val matchWarnTime: Long,
                       val tbaApiKey: String,
+                      val usePredictedTime: Boolean,
                       val matchChecklist: List<String>,
                       val safetyChecklist: List<String>)

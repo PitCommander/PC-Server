@@ -48,7 +48,8 @@ object AnnounceSock : Runnable {
 
         while (!Thread.interrupted()) {
             while (announcementQueue.size > 0) {
-                val toSend = gson.toJson(announcementQueue.removeAt(0))
+                val current = announcementQueue.removeAt(0)
+                val toSend = gson.toJson(current)
                 socket.send(toSend)
                 logger.debug("Announce: $toSend")
             }

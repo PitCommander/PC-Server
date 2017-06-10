@@ -20,6 +20,7 @@ object MatchChecklistContainer : ChecklistContainerBase("Match") {
 
     override fun init() {
         ChecklistPopulator.populateMatch(boxes)
+        checkAll()
         fireUpdate()
     }
 

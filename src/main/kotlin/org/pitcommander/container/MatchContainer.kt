@@ -134,6 +134,7 @@ object MatchContainer : Container() {
 
     private fun recalc(): Boolean {
         var changed = false //Keep track of our changes
+        var updateMatchList = false
         val currentTime = TimeTicker.getCurrentTime() //The current time is read once to prevent shift
         var lastMatchIndex = -1 //The indexes of the values we want to pull from the lists
         var currentMatchIndex = -1 //Storing these as indexes instead of values makes this much easier
@@ -179,7 +180,7 @@ object MatchContainer : Container() {
             if (iCurrentMatch != matches[currentMatchIndex]) {
                 iCurrentMatch = matches[currentMatchIndex]
                 changed = true
-                MatchChecklistContainer.reset()
+                updateMatchList = true
             }
         } else {
             iCurrentMatch = null
@@ -207,6 +208,10 @@ object MatchContainer : Container() {
         currentMatch = ScheduleElement(iCurrentMatch)
         nextMatch = ScheduleElement(iNextMatch)
         currentlyPlaying = ScheduleElement(iCurrentlyPlaying)
+
+        if (updateMatchList) {
+            MatchChecklistContainer.reset()
+        }
 
         timeToZero = (iCurrentMatch?.time ?: 0L) - currentTime
         if (timeToZero < 0) {

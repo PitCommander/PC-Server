@@ -34,6 +34,7 @@ object CommandSock : Runnable {
     override fun run() {
         val context = ZMQ.context(1)
         val socket = context.socket(ZMQ.REP)
+        socket.receiveTimeOut = 30
         socket.bind("tcp://*:$port")
 
         var command: String?
@@ -51,6 +52,11 @@ object CommandSock : Runnable {
                 replyEncoded = gson.toJson(reply)
                 socket.send(replyEncoded)
                 logger.debug("Replying: $replyEncoded")
+            }
+            try {
+                Thread.sleep(10L)
+            } catch(e: InterruptedException) {
+                Thread.currentThread().interrupt()
             }
         }
     }

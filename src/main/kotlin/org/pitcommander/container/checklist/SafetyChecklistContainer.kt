@@ -18,6 +18,7 @@ import org.pitcommander.util.ChecklistPopulator
 object SafetyChecklistContainer : ChecklistContainerBase("Safety") {
     override fun init() {
         ChecklistPopulator.populateSafety(boxes)
+        checkAll()
         fireUpdate()
     }
 }
