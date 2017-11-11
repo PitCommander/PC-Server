@@ -18,6 +18,8 @@ object GeneralContainer : Container() {
 
     private var teamNumber = 0
     private var event = "?"
+    private var teamColor = "000000"
+    private var teamLogo = ""
 
     fun setTeamNumber(teamNumber: Int) {
         synchronized(lock) {
@@ -37,6 +39,24 @@ object GeneralContainer : Container() {
         }
     }
 
+    fun setTeamColor(color: String) {
+        synchronized(lock) {
+            if (teamColor != color) {
+                teamColor = color
+                fireUpdate()
+            }
+        }
+    }
+
+    fun setTeamLogo(image: String) {
+        synchronized(lock) {
+            if (image != teamLogo) {
+                teamLogo = image
+                fireUpdate()
+            }
+        }
+    }
+
     fun getTeamNumber(): Int {
         synchronized(lock) {
             return teamNumber
@@ -46,6 +66,18 @@ object GeneralContainer : Container() {
     fun getEvent(): String {
         synchronized(lock) {
             return event
+        }
+    }
+
+    fun getTeamColor(): String {
+        synchronized(lock) {
+            return teamColor
+        }
+    }
+
+    fun getTeamLogo(): String {
+        synchronized(lock) {
+            return teamLogo
         }
     }
 }

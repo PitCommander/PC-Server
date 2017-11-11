@@ -34,8 +34,6 @@ fun String.stripNum(): String {
     return this.replace(Regex("[0-9]"), "")
 }
 
-
-
 fun main(args: Array<String>) {
     var debug = false
     if (args.isNotEmpty()) {
@@ -60,15 +58,10 @@ fun main(args: Array<String>) {
     CommandSock.setup(5801)
 
     //RUNTIME START
-    val sockCommand = Thread(CommandSock, "sock.command")
-    val sockAnnounce = Thread(AnnounceSock, "sock.announce")
-    val runtimeTicker = Thread(TimeTicker, "runtime.ticker")
-    val runtimePoller = Thread(TbaPoller, "runtime.poller")
-
-    sockCommand.start()
-    sockAnnounce.start()
-    runtimeTicker.start()
-    runtimePoller.start()
+    val sockCommand = Thread(CommandSock, "sock.command").apply {start()}
+    val sockAnnounce = Thread(AnnounceSock, "sock.announce").apply {start()}
+    val runtimeTicker = Thread(TimeTicker, "runtime.ticker").apply {start()}
+    val runtimePoller = Thread(TbaPoller, "runtime.poller").apply {start()}
 
     //CHECKLIST INIT
     MatchChecklistContainer.init()

@@ -27,5 +27,5 @@ abstract class Handler {
     abstract protected fun handleImpl(command: Command)
 
     var reply = Replies.NONE
-    val payload = HashMap<String, Any>()
+    val payload = HashMap<String, Any?>()
 }

@@ -13,4 +13,4 @@ package org.pitcommander.command
  * @version 5/24/17
  */
 data class Reply(val id: Replies,
-                 val payload: HashMap<String, Any>)
+                 val payload: HashMap<String, Any?>)

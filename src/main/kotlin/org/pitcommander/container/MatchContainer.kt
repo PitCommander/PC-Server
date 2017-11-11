@@ -67,7 +67,11 @@ object MatchContainer : Container() {
                 } else if (match.winningAlliance == "blue") {
                     winner = "BLUE"
                 } else {
-                    winner = "TIE"
+                    if (match.alliances.red.score == 0 && match.alliances.blue.score == 0) {
+                        winner = "--"
+                    } else {
+                        winner = "TIE"
+                    }
                 }
                 if (bumperColor == "RED") {
                     match.alliances.blue.teamKeys.forEach {

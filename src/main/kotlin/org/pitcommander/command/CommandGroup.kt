@@ -13,6 +13,9 @@ package org.pitcommander.command
  * @version 5/28/17
  */
 enum class CommandGroup {
+    GENERAL,
+    MATCH,
+    BATTERY,
     CHECKLIST_MATCH,
     CHECKLIST_SAFETY,
     TV

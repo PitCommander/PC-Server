@@ -47,7 +47,7 @@ object CommandSock : Runnable {
                 try {
                     reply = CommandRouter.route(gson.fromJson(command, Command::class.java))
                 } catch (e: JsonParseException) {
-                    reply = Reply(Replies.GENERAL_FAIL, HashMap<String, Any>())
+                    reply = Reply(Replies.GENERAL_FAIL, HashMap<String, Any?>())
                 }
                 replyEncoded = gson.toJson(reply)
                 socket.send(replyEncoded)

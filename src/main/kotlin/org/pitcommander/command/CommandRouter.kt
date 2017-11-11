@@ -18,9 +18,12 @@ import org.pitcommander.command.handler.*
 object CommandRouter {
     fun route(command: Command): Reply {
         return when (command.id.group) {
-            CommandGroup.CHECKLIST_MATCH -> MatchChecklistHandler.handle(command)
-            CommandGroup.CHECKLIST_SAFETY -> SafetyChecklistHandler.handle(command)
-            CommandGroup.TV -> TvHandler.handle(command)
-        }
+            CommandGroup.CHECKLIST_MATCH  -> MatchChecklistHandler
+            CommandGroup.CHECKLIST_SAFETY -> SafetyChecklistHandler
+            CommandGroup.TV               -> TvHandler
+            CommandGroup.GENERAL          -> GeneralHandler
+            CommandGroup.MATCH            -> MatchHandler
+            CommandGroup.BATTERY          -> BatteryHandler
+        }.handle(command)
     }
 }

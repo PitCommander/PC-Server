@@ -27,7 +27,7 @@ object TvHandler : Handler() {
                 toSend.putAll(command.payload)
                 AnnounceSock.announce(toSend)
                 reply = Replies.GENERAL_ACK
-                payload.put("message", "TV packet reflected you goon lel top kek")
+                payload.put("message", "TV packet reflected")
             }
         }
     }

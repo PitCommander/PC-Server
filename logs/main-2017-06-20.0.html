@@ -1,0 +1,1178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Logback Log Messages</title>
+<style  type="text/css">
+table { margin-left: 2em; margin-right: 2em; border-left: 2px solid #AAA; }
+TR.even { background: #FFFFFF; }
+TR.odd { background: #EAEAEA; }
+TR.warn TD.Level, TR.error TD.Level, TR.fatal TD.Level {font-weight: bold; color: #FF4040 }
+TD { padding-right: 1ex; padding-left: 1ex; border-right: 2px solid #AAA; }
+TD.Time, TD.Date { text-align: right; font-family: courier, monospace; font-size: smaller; }
+TD.Thread { text-align: left; }
+TD.Level { text-align: right; }
+TD.Logger { text-align: left; }
+TR.header { background: #596ED5; color: #FFF; font-weight: bold; font-size: larger; }
+TD.Exception { background: #A2AEE8; font-family: courier, monospace;}
+</style>
+
+  </head>
+<body>
+<hr/>
+<p>Log session start time Tue Jun 20 09:45:00 EDT 2017</p><p></p>
+
+<table cellspacing="0">
+<tr class="header">
+<td class="Literal">Literal</td>
+<td class="Date">Date</td>
+<td class="Thread">Thread</td>
+<td class="Level">Level</td>
+<td class="Logger">Logger</td>
+<td class="LineOfCaller">LineOfCaller</td>
+<td class="Message">Message</td>
+</tr>
+
+
+<tr class="info even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:00.364</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">ROOT</td>
+<td class="LineOfCaller">47</td>
+<td class="Message">PitCommander Server v1.4-SNAPSHOT</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:00.367</td>
+<td class="Thread">main</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">ROOT</td>
+<td class="LineOfCaller">50</td>
+<td class="Message">Reading config from file &#39;config.json&#39;</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:00.419</td>
+<td class="Thread">main</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">ROOT</td>
+<td class="LineOfCaller">52</td>
+<td class="Message">Config loaded</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:00.447</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489848600</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:00.447</td>
+<td class="Thread">runtime.poller</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TbaPoller</td>
+<td class="LineOfCaller">49</td>
+<td class="Message">Polling!</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:00.448</td>
+<td class="Thread">runtime.poller</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TbaPoller</td>
+<td class="LineOfCaller">62</td>
+<td class="Message">Found event: vapor</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:00.487</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:0,&quot;warnTime&quot;:true,&quot;newTime&quot;:1489848600}}</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:00.489</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;MatchChecklistContainerUpdate&quot;,&quot;payload&quot;:{&quot;container&quot;:{&quot;blueSwitchTask&quot;:false,&quot;redSwitchTask&quot;:false,&quot;boxes&quot;:[{&quot;name&quot;:&quot;spinny wheel&quot;,&quot;value&quot;:false},{&quot;name&quot;:&quot;fixy things&quot;,&quot;value&quot;:false}],&quot;allChecked&quot;:false}}}</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:00.490</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;GeneralContainerUpdate&quot;,&quot;payload&quot;:{&quot;container&quot;:{&quot;teamNumber&quot;:401,&quot;event&quot;:&quot;vapor&quot;,&quot;teamColor&quot;:&quot;000000&quot;,&quot;teamLogo&quot;:&quot;&quot;}}}</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:00.491</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;SafetyChecklistContainerUpdate&quot;,&quot;payload&quot;:{&quot;container&quot;:{&quot;boxes&quot;:[],&quot;allChecked&quot;:false}}}</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:00.492</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;GeneralContainerUpdate&quot;,&quot;payload&quot;:{&quot;container&quot;:{&quot;teamNumber&quot;:401,&quot;event&quot;:&quot;vapor&quot;,&quot;teamColor&quot;:&quot;000000&quot;,&quot;teamLogo&quot;:&quot;&quot;}}}</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:01.448</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489848700</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:01.457</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:0,&quot;warnTime&quot;:true,&quot;newTime&quot;:1489848700}}</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:02.449</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489848800</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:02.466</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:0,&quot;warnTime&quot;:true,&quot;newTime&quot;:1489848800}}</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:03.451</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489848900</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:03.455</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:0,&quot;warnTime&quot;:true,&quot;newTime&quot;:1489848900}}</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:04.452</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489849000</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:04.469</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:0,&quot;warnTime&quot;:true,&quot;newTime&quot;:1489849000}}</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:05.041</td>
+<td class="Thread">runtime.poller</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TbaPoller</td>
+<td class="LineOfCaller">71</td>
+<td class="Message">Matches calculated</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:05.055</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;MatchChecklistContainerUpdate&quot;,&quot;payload&quot;:{&quot;container&quot;:{&quot;blueSwitchTask&quot;:false,&quot;redSwitchTask&quot;:true,&quot;boxes&quot;:[{&quot;name&quot;:&quot;Switch Bumpers: RED&quot;,&quot;value&quot;:false},{&quot;name&quot;:&quot;spinny wheel&quot;,&quot;value&quot;:false},{&quot;name&quot;:&quot;fixy things&quot;,&quot;value&quot;:false}],&quot;allChecked&quot;:false}}}</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:05.072</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;MatchContainerUpdate&quot;,&quot;payload&quot;:{&quot;container&quot;:{&quot;lastMatch&quot;:{&quot;matchNumber&quot;:&quot;?&quot;,&quot;predictedTime&quot;:0,&quot;scheduledTime&quot;:0,&quot;bumperColor&quot;:&quot;?&quot;,&quot;opponents&quot;:[],&quot;allies&quot;:[],&quot;winner&quot;:&quot;?&quot;,&quot;redScore&quot;:0,&quot;blueScore&quot;:0},&quot;currentMatch&quot;:{&quot;matchNumber&quot;:&quot;QM 1&quot;,&quot;predictedTime&quot;:1489849200,&quot;scheduledTime&quot;:1489849200,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[6189,5804,3258],&quot;allies&quot;:[401,3072,617],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:275,&quot;blueScore&quot;:145},&quot;nextMatch&quot;:{&quot;matchNumber&quot;:&quot;QM 5&quot;,&quot;predictedTime&quot;:1489853402,&quot;scheduledTime&quot;:1489851360,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[4286,435,2028],&quot;allies&quot;:[1137,401,6194],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:110,&quot;blueScore&quot;:215},&quot;currentlyPlaying&quot;:{&quot;matchNumber&quot;:&quot;?&quot;,&quot;predictedTime&quot;:0,&quot;scheduledTime&quot;:0,&quot;bumperColor&quot;:&quot;?&quot;,&quot;opponents&quot;:[],&quot;allies&quot;:[],&quot;winner&quot;:&quot;?&quot;,&quot;redScore&quot;:0,&quot;blueScore&quot;:0},&quot;schedule&quot;:[{&quot;matchNumber&quot;:&quot;QM 1&quot;,&quot;predictedTime&quot;:1489849200,&quot;scheduledTime&quot;:1489849200,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[6189,5804,3258],&quot;allies&quot;:[401,3072,617],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:275,&quot;blueScore&quot;:145},{&quot;matchNumber&quot;:&quot;QM 5&quot;,&quot;predictedTime&quot;:1489853402,&quot;scheduledTime&quot;:1489851360,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[4286,435,2028],&quot;allies&quot;:[1137,401,6194],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:110,&quot;blueScore&quot;:215},{&quot;matchNumber&quot;:&quot;QM 10&quot;,&quot;predictedTime&quot;:1489856103,&quot;scheduledTime&quot;:1489854060,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[2028,5830,1413],&quot;allies&quot;:[5957,401,1793],&quot;winner&quot;:&quot;TIE&quot;,&quot;redScore&quot;:120,&quot;blueScore&quot;:120},{&quot;matchNumber&quot;:&quot;QM 16&quot;,&quot;predictedTime&quot;:1489862284,&quot;scheduledTime&quot;:1489861620,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[2890,2363,5546],&quot;allies&quot;:[401,3359,5804],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:145,&quot;blueScore&quot;:201},{&quot;matchNumber&quot;:&quot;QM 21&quot;,&quot;predictedTime&quot;:1489865462,&quot;scheduledTime&quot;:1489864320,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[2890,5830,4286],&quot;allies&quot;:[3258,1413,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:165,&quot;blueScore&quot;:255},{&quot;matchNumber&quot;:&quot;QM 26&quot;,&quot;predictedTime&quot;:1489868361,&quot;scheduledTime&quot;:1489867020,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[1610,6194,1908],&quot;allies&quot;:[3258,6213,401],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:215,&quot;blueScore&quot;:160},{&quot;matchNumber&quot;:&quot;QM 30&quot;,&quot;predictedTime&quot;:1489870516,&quot;scheduledTime&quot;:1489869180,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5954,1793,3359],&quot;allies&quot;:[1610,401,620],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:255,&quot;blueScore&quot;:216},{&quot;matchNumber&quot;:&quot;QM 37&quot;,&quot;predictedTime&quot;:1489874402,&quot;scheduledTime&quot;:1489872960,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[1522,1908,3072],&quot;allies&quot;:[401,6213,6021],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:115,&quot;blueScore&quot;:135},{&quot;matchNumber&quot;:&quot;QM 41&quot;,&quot;predictedTime&quot;:1489876444,&quot;scheduledTime&quot;:1489875120,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5954,2363,6213],&quot;allies&quot;:[5830,1522,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:145,&quot;blueScore&quot;:185},{&quot;matchNumber&quot;:&quot;QM 43&quot;,&quot;predictedTime&quot;:0,&quot;scheduledTime&quot;:1489930200,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[1522,2363,4286],&quot;allies&quot;:[1610,2028,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:260,&quot;blueScore&quot;:265},{&quot;matchNumber&quot;:&quot;QM 49&quot;,&quot;predictedTime&quot;:1489933320,&quot;scheduledTime&quot;:1489933440,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[5546,6194,1522],&quot;allies&quot;:[401,3258,6021],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:335,&quot;blueScore&quot;:110},{&quot;matchNumber&quot;:&quot;QM 53&quot;,&quot;predictedTime&quot;:1489936203,&quot;scheduledTime&quot;:1489935600,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5957,2028,5546],&quot;allies&quot;:[401,3168,2363],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:260,&quot;blueScore&quot;:211},{&quot;matchNumber&quot;:&quot;QF 1&quot;,&quot;predictedTime&quot;:1489945507,&quot;scheduledTime&quot;:1489944780,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5804,3168,3136],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:230,&quot;blueScore&quot;:200},{&quot;matchNumber&quot;:&quot;QF 2&quot;,&quot;predictedTime&quot;:1489948562,&quot;scheduledTime&quot;:1489946940,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5804,3168,3136],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:165,&quot;blueScore&quot;:175},{&quot;matchNumber&quot;:&quot;QF 3&quot;,&quot;predictedTime&quot;:1489950602,&quot;scheduledTime&quot;:1489949460,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5804,3168,3136],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:265,&quot;blueScore&quot;:145},{&quot;matchNumber&quot;:&quot;SF 1&quot;,&quot;predictedTime&quot;:1489953727,&quot;scheduledTime&quot;:1489951440,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[620,1137,5954],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:255,&quot;blueScore&quot;:185},{&quot;matchNumber&quot;:&quot;SF 2&quot;,&quot;predictedTime&quot;:1489955470,&quot;scheduledTime&quot;:1489952520,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[620,1137,5954],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:205,&quot;blueScore&quot;:211},{&quot;matchNumber&quot;:&quot;SF 3&quot;,&quot;predictedTime&quot;:1489956182,&quot;scheduledTime&quot;:1489953960,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[620,1137,5954],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:200,&quot;blueScore&quot;:286}],&quot;wins&quot;:11,&quot;losses&quot;:6,&quot;ties&quot;:1,&quot;timeToZero&quot;:200}}}</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:05.453</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489849100</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:05.456</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:200,&quot;warnTime&quot;:true,&quot;newTime&quot;:1489849100}}</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:06.454</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489849200</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:06.464</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:100,&quot;warnTime&quot;:true,&quot;newTime&quot;:1489849200}}</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:07.455</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489849300</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:07.473</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:0,&quot;warnTime&quot;:true,&quot;newTime&quot;:1489849300}}</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:08.456</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489849400</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:08.461</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;MatchChecklistContainerUpdate&quot;,&quot;payload&quot;:{&quot;container&quot;:{&quot;blueSwitchTask&quot;:true,&quot;redSwitchTask&quot;:false,&quot;boxes&quot;:[{&quot;name&quot;:&quot;Switch Bumpers: BLUE&quot;,&quot;value&quot;:false},{&quot;name&quot;:&quot;spinny wheel&quot;,&quot;value&quot;:false},{&quot;name&quot;:&quot;fixy things&quot;,&quot;value&quot;:false}],&quot;allChecked&quot;:false}}}</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:08.464</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;MatchContainerUpdate&quot;,&quot;payload&quot;:{&quot;container&quot;:{&quot;lastMatch&quot;:{&quot;matchNumber&quot;:&quot;QM 1&quot;,&quot;predictedTime&quot;:1489849200,&quot;scheduledTime&quot;:1489849200,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[6189,5804,3258],&quot;allies&quot;:[401,3072,617],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:275,&quot;blueScore&quot;:145},&quot;currentMatch&quot;:{&quot;matchNumber&quot;:&quot;QM 5&quot;,&quot;predictedTime&quot;:1489853402,&quot;scheduledTime&quot;:1489851360,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[4286,435,2028],&quot;allies&quot;:[1137,401,6194],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:110,&quot;blueScore&quot;:215},&quot;nextMatch&quot;:{&quot;matchNumber&quot;:&quot;QM 10&quot;,&quot;predictedTime&quot;:1489856103,&quot;scheduledTime&quot;:1489854060,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[2028,5830,1413],&quot;allies&quot;:[5957,401,1793],&quot;winner&quot;:&quot;TIE&quot;,&quot;redScore&quot;:120,&quot;blueScore&quot;:120},&quot;currentlyPlaying&quot;:{&quot;matchNumber&quot;:&quot;QM 1&quot;,&quot;predictedTime&quot;:1489849200,&quot;scheduledTime&quot;:1489849200,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[6189,5804,3258],&quot;allies&quot;:[401,3072,617],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:275,&quot;blueScore&quot;:145},&quot;schedule&quot;:[{&quot;matchNumber&quot;:&quot;QM 1&quot;,&quot;predictedTime&quot;:1489849200,&quot;scheduledTime&quot;:1489849200,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[6189,5804,3258],&quot;allies&quot;:[401,3072,617],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:275,&quot;blueScore&quot;:145},{&quot;matchNumber&quot;:&quot;QM 5&quot;,&quot;predictedTime&quot;:1489853402,&quot;scheduledTime&quot;:1489851360,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[4286,435,2028],&quot;allies&quot;:[1137,401,6194],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:110,&quot;blueScore&quot;:215},{&quot;matchNumber&quot;:&quot;QM 10&quot;,&quot;predictedTime&quot;:1489856103,&quot;scheduledTime&quot;:1489854060,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[2028,5830,1413],&quot;allies&quot;:[5957,401,1793],&quot;winner&quot;:&quot;TIE&quot;,&quot;redScore&quot;:120,&quot;blueScore&quot;:120},{&quot;matchNumber&quot;:&quot;QM 16&quot;,&quot;predictedTime&quot;:1489862284,&quot;scheduledTime&quot;:1489861620,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[2890,2363,5546],&quot;allies&quot;:[401,3359,5804],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:145,&quot;blueScore&quot;:201},{&quot;matchNumber&quot;:&quot;QM 21&quot;,&quot;predictedTime&quot;:1489865462,&quot;scheduledTime&quot;:1489864320,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[2890,5830,4286],&quot;allies&quot;:[3258,1413,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:165,&quot;blueScore&quot;:255},{&quot;matchNumber&quot;:&quot;QM 26&quot;,&quot;predictedTime&quot;:1489868361,&quot;scheduledTime&quot;:1489867020,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[1610,6194,1908],&quot;allies&quot;:[3258,6213,401],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:215,&quot;blueScore&quot;:160},{&quot;matchNumber&quot;:&quot;QM 30&quot;,&quot;predictedTime&quot;:1489870516,&quot;scheduledTime&quot;:1489869180,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5954,1793,3359],&quot;allies&quot;:[1610,401,620],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:255,&quot;blueScore&quot;:216},{&quot;matchNumber&quot;:&quot;QM 37&quot;,&quot;predictedTime&quot;:1489874402,&quot;scheduledTime&quot;:1489872960,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[1522,1908,3072],&quot;allies&quot;:[401,6213,6021],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:115,&quot;blueScore&quot;:135},{&quot;matchNumber&quot;:&quot;QM 41&quot;,&quot;predictedTime&quot;:1489876444,&quot;scheduledTime&quot;:1489875120,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5954,2363,6213],&quot;allies&quot;:[5830,1522,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:145,&quot;blueScore&quot;:185},{&quot;matchNumber&quot;:&quot;QM 43&quot;,&quot;predictedTime&quot;:0,&quot;scheduledTime&quot;:1489930200,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[1522,2363,4286],&quot;allies&quot;:[1610,2028,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:260,&quot;blueScore&quot;:265},{&quot;matchNumber&quot;:&quot;QM 49&quot;,&quot;predictedTime&quot;:1489933320,&quot;scheduledTime&quot;:1489933440,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[5546,6194,1522],&quot;allies&quot;:[401,3258,6021],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:335,&quot;blueScore&quot;:110},{&quot;matchNumber&quot;:&quot;QM 53&quot;,&quot;predictedTime&quot;:1489936203,&quot;scheduledTime&quot;:1489935600,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5957,2028,5546],&quot;allies&quot;:[401,3168,2363],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:260,&quot;blueScore&quot;:211},{&quot;matchNumber&quot;:&quot;QF 1&quot;,&quot;predictedTime&quot;:1489945507,&quot;scheduledTime&quot;:1489944780,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5804,3168,3136],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:230,&quot;blueScore&quot;:200},{&quot;matchNumber&quot;:&quot;QF 2&quot;,&quot;predictedTime&quot;:1489948562,&quot;scheduledTime&quot;:1489946940,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5804,3168,3136],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:165,&quot;blueScore&quot;:175},{&quot;matchNumber&quot;:&quot;QF 3&quot;,&quot;predictedTime&quot;:1489950602,&quot;scheduledTime&quot;:1489949460,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5804,3168,3136],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:265,&quot;blueScore&quot;:145},{&quot;matchNumber&quot;:&quot;SF 1&quot;,&quot;predictedTime&quot;:1489953727,&quot;scheduledTime&quot;:1489951440,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[620,1137,5954],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:255,&quot;blueScore&quot;:185},{&quot;matchNumber&quot;:&quot;SF 2&quot;,&quot;predictedTime&quot;:1489955470,&quot;scheduledTime&quot;:1489952520,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[620,1137,5954],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:205,&quot;blueScore&quot;:211},{&quot;matchNumber&quot;:&quot;SF 3&quot;,&quot;predictedTime&quot;:1489956182,&quot;scheduledTime&quot;:1489953960,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[620,1137,5954],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:200,&quot;blueScore&quot;:286}],&quot;wins&quot;:11,&quot;losses&quot;:6,&quot;ties&quot;:1,&quot;timeToZero&quot;:2060}}}</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:08.465</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:2060,&quot;warnTime&quot;:false,&quot;newTime&quot;:1489849400}}</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:09.457</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489849500</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:09.474</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:1960,&quot;warnTime&quot;:false,&quot;newTime&quot;:1489849500}}</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:10.458</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489849600</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:10.463</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:1860,&quot;warnTime&quot;:false,&quot;newTime&quot;:1489849600}}</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:11.459</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489849700</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:11.472</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:1760,&quot;warnTime&quot;:false,&quot;newTime&quot;:1489849700}}</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:12.460</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489849800</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:12.461</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:1660,&quot;warnTime&quot;:false,&quot;newTime&quot;:1489849800}}</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:13.453</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;MatchContainerUpdate&quot;,&quot;payload&quot;:{&quot;container&quot;:{&quot;lastMatch&quot;:{&quot;matchNumber&quot;:&quot;QM 1&quot;,&quot;predictedTime&quot;:1489849200,&quot;scheduledTime&quot;:1489849200,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[6189,5804,3258],&quot;allies&quot;:[401,3072,617],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:275,&quot;blueScore&quot;:145},&quot;currentMatch&quot;:{&quot;matchNumber&quot;:&quot;QM 5&quot;,&quot;predictedTime&quot;:1489853402,&quot;scheduledTime&quot;:1489851360,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[4286,435,2028],&quot;allies&quot;:[1137,401,6194],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:110,&quot;blueScore&quot;:215},&quot;nextMatch&quot;:{&quot;matchNumber&quot;:&quot;QM 10&quot;,&quot;predictedTime&quot;:1489856103,&quot;scheduledTime&quot;:1489854060,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[2028,5830,1413],&quot;allies&quot;:[5957,401,1793],&quot;winner&quot;:&quot;TIE&quot;,&quot;redScore&quot;:120,&quot;blueScore&quot;:120},&quot;currentlyPlaying&quot;:{&quot;matchNumber&quot;:&quot;QM 2&quot;,&quot;predictedTime&quot;:1489851662,&quot;scheduledTime&quot;:1489849740,&quot;bumperColor&quot;:&quot;NONE&quot;,&quot;opponents&quot;:[],&quot;allies&quot;:[],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:191,&quot;blueScore&quot;:235},&quot;schedule&quot;:[{&quot;matchNumber&quot;:&quot;QM 1&quot;,&quot;predictedTime&quot;:1489849200,&quot;scheduledTime&quot;:1489849200,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[6189,5804,3258],&quot;allies&quot;:[401,3072,617],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:275,&quot;blueScore&quot;:145},{&quot;matchNumber&quot;:&quot;QM 5&quot;,&quot;predictedTime&quot;:1489853402,&quot;scheduledTime&quot;:1489851360,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[4286,435,2028],&quot;allies&quot;:[1137,401,6194],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:110,&quot;blueScore&quot;:215},{&quot;matchNumber&quot;:&quot;QM 10&quot;,&quot;predictedTime&quot;:1489856103,&quot;scheduledTime&quot;:1489854060,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[2028,5830,1413],&quot;allies&quot;:[5957,401,1793],&quot;winner&quot;:&quot;TIE&quot;,&quot;redScore&quot;:120,&quot;blueScore&quot;:120},{&quot;matchNumber&quot;:&quot;QM 16&quot;,&quot;predictedTime&quot;:1489862284,&quot;scheduledTime&quot;:1489861620,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[2890,2363,5546],&quot;allies&quot;:[401,3359,5804],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:145,&quot;blueScore&quot;:201},{&quot;matchNumber&quot;:&quot;QM 21&quot;,&quot;predictedTime&quot;:1489865462,&quot;scheduledTime&quot;:1489864320,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[2890,5830,4286],&quot;allies&quot;:[3258,1413,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:165,&quot;blueScore&quot;:255},{&quot;matchNumber&quot;:&quot;QM 26&quot;,&quot;predictedTime&quot;:1489868361,&quot;scheduledTime&quot;:1489867020,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[1610,6194,1908],&quot;allies&quot;:[3258,6213,401],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:215,&quot;blueScore&quot;:160},{&quot;matchNumber&quot;:&quot;QM 30&quot;,&quot;predictedTime&quot;:1489870516,&quot;scheduledTime&quot;:1489869180,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5954,1793,3359],&quot;allies&quot;:[1610,401,620],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:255,&quot;blueScore&quot;:216},{&quot;matchNumber&quot;:&quot;QM 37&quot;,&quot;predictedTime&quot;:1489874402,&quot;scheduledTime&quot;:1489872960,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[1522,1908,3072],&quot;allies&quot;:[401,6213,6021],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:115,&quot;blueScore&quot;:135},{&quot;matchNumber&quot;:&quot;QM 41&quot;,&quot;predictedTime&quot;:1489876444,&quot;scheduledTime&quot;:1489875120,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5954,2363,6213],&quot;allies&quot;:[5830,1522,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:145,&quot;blueScore&quot;:185},{&quot;matchNumber&quot;:&quot;QM 43&quot;,&quot;predictedTime&quot;:0,&quot;scheduledTime&quot;:1489930200,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[1522,2363,4286],&quot;allies&quot;:[1610,2028,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:260,&quot;blueScore&quot;:265},{&quot;matchNumber&quot;:&quot;QM 49&quot;,&quot;predictedTime&quot;:1489933320,&quot;scheduledTime&quot;:1489933440,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[5546,6194,1522],&quot;allies&quot;:[401,3258,6021],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:335,&quot;blueScore&quot;:110},{&quot;matchNumber&quot;:&quot;QM 53&quot;,&quot;predictedTime&quot;:1489936203,&quot;scheduledTime&quot;:1489935600,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5957,2028,5546],&quot;allies&quot;:[401,3168,2363],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:260,&quot;blueScore&quot;:211},{&quot;matchNumber&quot;:&quot;QF 1&quot;,&quot;predictedTime&quot;:1489945507,&quot;scheduledTime&quot;:1489944780,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5804,3168,3136],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:230,&quot;blueScore&quot;:200},{&quot;matchNumber&quot;:&quot;QF 2&quot;,&quot;predictedTime&quot;:1489948562,&quot;scheduledTime&quot;:1489946940,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5804,3168,3136],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:165,&quot;blueScore&quot;:175},{&quot;matchNumber&quot;:&quot;QF 3&quot;,&quot;predictedTime&quot;:1489950602,&quot;scheduledTime&quot;:1489949460,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5804,3168,3136],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:265,&quot;blueScore&quot;:145},{&quot;matchNumber&quot;:&quot;SF 1&quot;,&quot;predictedTime&quot;:1489953727,&quot;scheduledTime&quot;:1489951440,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[620,1137,5954],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:255,&quot;blueScore&quot;:185},{&quot;matchNumber&quot;:&quot;SF 2&quot;,&quot;predictedTime&quot;:1489955470,&quot;scheduledTime&quot;:1489952520,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[620,1137,5954],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:205,&quot;blueScore&quot;:211},{&quot;matchNumber&quot;:&quot;SF 3&quot;,&quot;predictedTime&quot;:1489956182,&quot;scheduledTime&quot;:1489953960,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[620,1137,5954],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:200,&quot;blueScore&quot;:286}],&quot;wins&quot;:11,&quot;losses&quot;:6,&quot;ties&quot;:1,&quot;timeToZero&quot;:1560}}}</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:13.461</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489849900</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:13.475</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:1560,&quot;warnTime&quot;:false,&quot;newTime&quot;:1489849900}}</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:14.462</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489850000</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:14.464</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:1460,&quot;warnTime&quot;:false,&quot;newTime&quot;:1489850000}}</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:15.462</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489850100</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:15.472</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:1360,&quot;warnTime&quot;:false,&quot;newTime&quot;:1489850100}}</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:16.463</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489850200</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:16.481</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:1260,&quot;warnTime&quot;:false,&quot;newTime&quot;:1489850200}}</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:17.464</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489850300</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:17.469</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:1160,&quot;warnTime&quot;:false,&quot;newTime&quot;:1489850300}}</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:18.460</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;MatchContainerUpdate&quot;,&quot;payload&quot;:{&quot;container&quot;:{&quot;lastMatch&quot;:{&quot;matchNumber&quot;:&quot;QM 1&quot;,&quot;predictedTime&quot;:1489849200,&quot;scheduledTime&quot;:1489849200,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[6189,5804,3258],&quot;allies&quot;:[401,3072,617],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:275,&quot;blueScore&quot;:145},&quot;currentMatch&quot;:{&quot;matchNumber&quot;:&quot;QM 5&quot;,&quot;predictedTime&quot;:1489853402,&quot;scheduledTime&quot;:1489851360,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[4286,435,2028],&quot;allies&quot;:[1137,401,6194],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:110,&quot;blueScore&quot;:215},&quot;nextMatch&quot;:{&quot;matchNumber&quot;:&quot;QM 10&quot;,&quot;predictedTime&quot;:1489856103,&quot;scheduledTime&quot;:1489854060,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[2028,5830,1413],&quot;allies&quot;:[5957,401,1793],&quot;winner&quot;:&quot;TIE&quot;,&quot;redScore&quot;:120,&quot;blueScore&quot;:120},&quot;currentlyPlaying&quot;:{&quot;matchNumber&quot;:&quot;QM 3&quot;,&quot;predictedTime&quot;:1489852143,&quot;scheduledTime&quot;:1489850280,&quot;bumperColor&quot;:&quot;NONE&quot;,&quot;opponents&quot;:[],&quot;allies&quot;:[],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:161,&quot;blueScore&quot;:70},&quot;schedule&quot;:[{&quot;matchNumber&quot;:&quot;QM 1&quot;,&quot;predictedTime&quot;:1489849200,&quot;scheduledTime&quot;:1489849200,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[6189,5804,3258],&quot;allies&quot;:[401,3072,617],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:275,&quot;blueScore&quot;:145},{&quot;matchNumber&quot;:&quot;QM 5&quot;,&quot;predictedTime&quot;:1489853402,&quot;scheduledTime&quot;:1489851360,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[4286,435,2028],&quot;allies&quot;:[1137,401,6194],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:110,&quot;blueScore&quot;:215},{&quot;matchNumber&quot;:&quot;QM 10&quot;,&quot;predictedTime&quot;:1489856103,&quot;scheduledTime&quot;:1489854060,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[2028,5830,1413],&quot;allies&quot;:[5957,401,1793],&quot;winner&quot;:&quot;TIE&quot;,&quot;redScore&quot;:120,&quot;blueScore&quot;:120},{&quot;matchNumber&quot;:&quot;QM 16&quot;,&quot;predictedTime&quot;:1489862284,&quot;scheduledTime&quot;:1489861620,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[2890,2363,5546],&quot;allies&quot;:[401,3359,5804],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:145,&quot;blueScore&quot;:201},{&quot;matchNumber&quot;:&quot;QM 21&quot;,&quot;predictedTime&quot;:1489865462,&quot;scheduledTime&quot;:1489864320,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[2890,5830,4286],&quot;allies&quot;:[3258,1413,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:165,&quot;blueScore&quot;:255},{&quot;matchNumber&quot;:&quot;QM 26&quot;,&quot;predictedTime&quot;:1489868361,&quot;scheduledTime&quot;:1489867020,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[1610,6194,1908],&quot;allies&quot;:[3258,6213,401],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:215,&quot;blueScore&quot;:160},{&quot;matchNumber&quot;:&quot;QM 30&quot;,&quot;predictedTime&quot;:1489870516,&quot;scheduledTime&quot;:1489869180,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5954,1793,3359],&quot;allies&quot;:[1610,401,620],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:255,&quot;blueScore&quot;:216},{&quot;matchNumber&quot;:&quot;QM 37&quot;,&quot;predictedTime&quot;:1489874402,&quot;scheduledTime&quot;:1489872960,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[1522,1908,3072],&quot;allies&quot;:[401,6213,6021],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:115,&quot;blueScore&quot;:135},{&quot;matchNumber&quot;:&quot;QM 41&quot;,&quot;predictedTime&quot;:1489876444,&quot;scheduledTime&quot;:1489875120,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5954,2363,6213],&quot;allies&quot;:[5830,1522,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:145,&quot;blueScore&quot;:185},{&quot;matchNumber&quot;:&quot;QM 43&quot;,&quot;predictedTime&quot;:0,&quot;scheduledTime&quot;:1489930200,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[1522,2363,4286],&quot;allies&quot;:[1610,2028,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:260,&quot;blueScore&quot;:265},{&quot;matchNumber&quot;:&quot;QM 49&quot;,&quot;predictedTime&quot;:1489933320,&quot;scheduledTime&quot;:1489933440,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[5546,6194,1522],&quot;allies&quot;:[401,3258,6021],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:335,&quot;blueScore&quot;:110},{&quot;matchNumber&quot;:&quot;QM 53&quot;,&quot;predictedTime&quot;:1489936203,&quot;scheduledTime&quot;:1489935600,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5957,2028,5546],&quot;allies&quot;:[401,3168,2363],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:260,&quot;blueScore&quot;:211},{&quot;matchNumber&quot;:&quot;QF 1&quot;,&quot;predictedTime&quot;:1489945507,&quot;scheduledTime&quot;:1489944780,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5804,3168,3136],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:230,&quot;blueScore&quot;:200},{&quot;matchNumber&quot;:&quot;QF 2&quot;,&quot;predictedTime&quot;:1489948562,&quot;scheduledTime&quot;:1489946940,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5804,3168,3136],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:165,&quot;blueScore&quot;:175},{&quot;matchNumber&quot;:&quot;QF 3&quot;,&quot;predictedTime&quot;:1489950602,&quot;scheduledTime&quot;:1489949460,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5804,3168,3136],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:265,&quot;blueScore&quot;:145},{&quot;matchNumber&quot;:&quot;SF 1&quot;,&quot;predictedTime&quot;:1489953727,&quot;scheduledTime&quot;:1489951440,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[620,1137,5954],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:255,&quot;blueScore&quot;:185},{&quot;matchNumber&quot;:&quot;SF 2&quot;,&quot;predictedTime&quot;:1489955470,&quot;scheduledTime&quot;:1489952520,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[620,1137,5954],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:205,&quot;blueScore&quot;:211},{&quot;matchNumber&quot;:&quot;SF 3&quot;,&quot;predictedTime&quot;:1489956182,&quot;scheduledTime&quot;:1489953960,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[620,1137,5954],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:200,&quot;blueScore&quot;:286}],&quot;wins&quot;:11,&quot;losses&quot;:6,&quot;ties&quot;:1,&quot;timeToZero&quot;:1060}}}</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:18.465</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489850400</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:18.483</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:1060,&quot;warnTime&quot;:false,&quot;newTime&quot;:1489850400}}</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:19.465</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489850500</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:19.470</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:960,&quot;warnTime&quot;:false,&quot;newTime&quot;:1489850500}}</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:20.467</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489850600</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:20.479</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:860,&quot;warnTime&quot;:false,&quot;newTime&quot;:1489850600}}</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:21.468</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:760,&quot;warnTime&quot;:false,&quot;newTime&quot;:1489850700}}</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:21.468</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489850700</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:22.469</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489850800</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:22.476</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:660,&quot;warnTime&quot;:false,&quot;newTime&quot;:1489850800}}</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:23.470</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489850900</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:23.484</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:560,&quot;warnTime&quot;:false,&quot;newTime&quot;:1489850900}}</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:24.454</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;MatchContainerUpdate&quot;,&quot;payload&quot;:{&quot;container&quot;:{&quot;lastMatch&quot;:{&quot;matchNumber&quot;:&quot;QM 1&quot;,&quot;predictedTime&quot;:1489849200,&quot;scheduledTime&quot;:1489849200,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[6189,5804,3258],&quot;allies&quot;:[401,3072,617],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:275,&quot;blueScore&quot;:145},&quot;currentMatch&quot;:{&quot;matchNumber&quot;:&quot;QM 5&quot;,&quot;predictedTime&quot;:1489853402,&quot;scheduledTime&quot;:1489851360,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[4286,435,2028],&quot;allies&quot;:[1137,401,6194],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:110,&quot;blueScore&quot;:215},&quot;nextMatch&quot;:{&quot;matchNumber&quot;:&quot;QM 10&quot;,&quot;predictedTime&quot;:1489856103,&quot;scheduledTime&quot;:1489854060,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[2028,5830,1413],&quot;allies&quot;:[5957,401,1793],&quot;winner&quot;:&quot;TIE&quot;,&quot;redScore&quot;:120,&quot;blueScore&quot;:120},&quot;currentlyPlaying&quot;:{&quot;matchNumber&quot;:&quot;QM 4&quot;,&quot;predictedTime&quot;:1489852862,&quot;scheduledTime&quot;:1489850820,&quot;bumperColor&quot;:&quot;NONE&quot;,&quot;opponents&quot;:[],&quot;allies&quot;:[],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:135,&quot;blueScore&quot;:235},&quot;schedule&quot;:[{&quot;matchNumber&quot;:&quot;QM 1&quot;,&quot;predictedTime&quot;:1489849200,&quot;scheduledTime&quot;:1489849200,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[6189,5804,3258],&quot;allies&quot;:[401,3072,617],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:275,&quot;blueScore&quot;:145},{&quot;matchNumber&quot;:&quot;QM 5&quot;,&quot;predictedTime&quot;:1489853402,&quot;scheduledTime&quot;:1489851360,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[4286,435,2028],&quot;allies&quot;:[1137,401,6194],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:110,&quot;blueScore&quot;:215},{&quot;matchNumber&quot;:&quot;QM 10&quot;,&quot;predictedTime&quot;:1489856103,&quot;scheduledTime&quot;:1489854060,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[2028,5830,1413],&quot;allies&quot;:[5957,401,1793],&quot;winner&quot;:&quot;TIE&quot;,&quot;redScore&quot;:120,&quot;blueScore&quot;:120},{&quot;matchNumber&quot;:&quot;QM 16&quot;,&quot;predictedTime&quot;:1489862284,&quot;scheduledTime&quot;:1489861620,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[2890,2363,5546],&quot;allies&quot;:[401,3359,5804],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:145,&quot;blueScore&quot;:201},{&quot;matchNumber&quot;:&quot;QM 21&quot;,&quot;predictedTime&quot;:1489865462,&quot;scheduledTime&quot;:1489864320,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[2890,5830,4286],&quot;allies&quot;:[3258,1413,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:165,&quot;blueScore&quot;:255},{&quot;matchNumber&quot;:&quot;QM 26&quot;,&quot;predictedTime&quot;:1489868361,&quot;scheduledTime&quot;:1489867020,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[1610,6194,1908],&quot;allies&quot;:[3258,6213,401],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:215,&quot;blueScore&quot;:160},{&quot;matchNumber&quot;:&quot;QM 30&quot;,&quot;predictedTime&quot;:1489870516,&quot;scheduledTime&quot;:1489869180,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5954,1793,3359],&quot;allies&quot;:[1610,401,620],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:255,&quot;blueScore&quot;:216},{&quot;matchNumber&quot;:&quot;QM 37&quot;,&quot;predictedTime&quot;:1489874402,&quot;scheduledTime&quot;:1489872960,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[1522,1908,3072],&quot;allies&quot;:[401,6213,6021],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:115,&quot;blueScore&quot;:135},{&quot;matchNumber&quot;:&quot;QM 41&quot;,&quot;predictedTime&quot;:1489876444,&quot;scheduledTime&quot;:1489875120,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5954,2363,6213],&quot;allies&quot;:[5830,1522,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:145,&quot;blueScore&quot;:185},{&quot;matchNumber&quot;:&quot;QM 43&quot;,&quot;predictedTime&quot;:0,&quot;scheduledTime&quot;:1489930200,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[1522,2363,4286],&quot;allies&quot;:[1610,2028,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:260,&quot;blueScore&quot;:265},{&quot;matchNumber&quot;:&quot;QM 49&quot;,&quot;predictedTime&quot;:1489933320,&quot;scheduledTime&quot;:1489933440,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[5546,6194,1522],&quot;allies&quot;:[401,3258,6021],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:335,&quot;blueScore&quot;:110},{&quot;matchNumber&quot;:&quot;QM 53&quot;,&quot;predictedTime&quot;:1489936203,&quot;scheduledTime&quot;:1489935600,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5957,2028,5546],&quot;allies&quot;:[401,3168,2363],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:260,&quot;blueScore&quot;:211},{&quot;matchNumber&quot;:&quot;QF 1&quot;,&quot;predictedTime&quot;:1489945507,&quot;scheduledTime&quot;:1489944780,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5804,3168,3136],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:230,&quot;blueScore&quot;:200},{&quot;matchNumber&quot;:&quot;QF 2&quot;,&quot;predictedTime&quot;:1489948562,&quot;scheduledTime&quot;:1489946940,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5804,3168,3136],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:165,&quot;blueScore&quot;:175},{&quot;matchNumber&quot;:&quot;QF 3&quot;,&quot;predictedTime&quot;:1489950602,&quot;scheduledTime&quot;:1489949460,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5804,3168,3136],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:265,&quot;blueScore&quot;:145},{&quot;matchNumber&quot;:&quot;SF 1&quot;,&quot;predictedTime&quot;:1489953727,&quot;scheduledTime&quot;:1489951440,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[620,1137,5954],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:255,&quot;blueScore&quot;:185},{&quot;matchNumber&quot;:&quot;SF 2&quot;,&quot;predictedTime&quot;:1489955470,&quot;scheduledTime&quot;:1489952520,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[620,1137,5954],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:205,&quot;blueScore&quot;:211},{&quot;matchNumber&quot;:&quot;SF 3&quot;,&quot;predictedTime&quot;:1489956182,&quot;scheduledTime&quot;:1489953960,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[620,1137,5954],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:200,&quot;blueScore&quot;:286}],&quot;wins&quot;:11,&quot;losses&quot;:6,&quot;ties&quot;:1,&quot;timeToZero&quot;:460}}}</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:24.471</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489851000</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:24.477</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:460,&quot;warnTime&quot;:false,&quot;newTime&quot;:1489851000}}</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:25.472</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489851100</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:25.485</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:360,&quot;warnTime&quot;:false,&quot;newTime&quot;:1489851100}}</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:26.473</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489851200</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:26.474</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:260,&quot;warnTime&quot;:true,&quot;newTime&quot;:1489851200}}</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:27.474</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489851300</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:27.483</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:160,&quot;warnTime&quot;:true,&quot;newTime&quot;:1489851300}}</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:28.475</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489851400</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:28.491</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:60,&quot;warnTime&quot;:true,&quot;newTime&quot;:1489851400}}</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:29.459</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;MatchChecklistContainerUpdate&quot;,&quot;payload&quot;:{&quot;container&quot;:{&quot;blueSwitchTask&quot;:false,&quot;redSwitchTask&quot;:false,&quot;boxes&quot;:[{&quot;name&quot;:&quot;spinny wheel&quot;,&quot;value&quot;:false},{&quot;name&quot;:&quot;fixy things&quot;,&quot;value&quot;:false}],&quot;allChecked&quot;:false}}}</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:29.462</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;MatchContainerUpdate&quot;,&quot;payload&quot;:{&quot;container&quot;:{&quot;lastMatch&quot;:{&quot;matchNumber&quot;:&quot;QM 5&quot;,&quot;predictedTime&quot;:1489853402,&quot;scheduledTime&quot;:1489851360,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[4286,435,2028],&quot;allies&quot;:[1137,401,6194],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:110,&quot;blueScore&quot;:215},&quot;currentMatch&quot;:{&quot;matchNumber&quot;:&quot;QM 10&quot;,&quot;predictedTime&quot;:1489856103,&quot;scheduledTime&quot;:1489854060,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[2028,5830,1413],&quot;allies&quot;:[5957,401,1793],&quot;winner&quot;:&quot;TIE&quot;,&quot;redScore&quot;:120,&quot;blueScore&quot;:120},&quot;nextMatch&quot;:{&quot;matchNumber&quot;:&quot;QM 16&quot;,&quot;predictedTime&quot;:1489862284,&quot;scheduledTime&quot;:1489861620,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[2890,2363,5546],&quot;allies&quot;:[401,3359,5804],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:145,&quot;blueScore&quot;:201},&quot;currentlyPlaying&quot;:{&quot;matchNumber&quot;:&quot;QM 5&quot;,&quot;predictedTime&quot;:1489853402,&quot;scheduledTime&quot;:1489851360,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[4286,435,2028],&quot;allies&quot;:[1137,401,6194],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:110,&quot;blueScore&quot;:215},&quot;schedule&quot;:[{&quot;matchNumber&quot;:&quot;QM 1&quot;,&quot;predictedTime&quot;:1489849200,&quot;scheduledTime&quot;:1489849200,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[6189,5804,3258],&quot;allies&quot;:[401,3072,617],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:275,&quot;blueScore&quot;:145},{&quot;matchNumber&quot;:&quot;QM 5&quot;,&quot;predictedTime&quot;:1489853402,&quot;scheduledTime&quot;:1489851360,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[4286,435,2028],&quot;allies&quot;:[1137,401,6194],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:110,&quot;blueScore&quot;:215},{&quot;matchNumber&quot;:&quot;QM 10&quot;,&quot;predictedTime&quot;:1489856103,&quot;scheduledTime&quot;:1489854060,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[2028,5830,1413],&quot;allies&quot;:[5957,401,1793],&quot;winner&quot;:&quot;TIE&quot;,&quot;redScore&quot;:120,&quot;blueScore&quot;:120},{&quot;matchNumber&quot;:&quot;QM 16&quot;,&quot;predictedTime&quot;:1489862284,&quot;scheduledTime&quot;:1489861620,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[2890,2363,5546],&quot;allies&quot;:[401,3359,5804],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:145,&quot;blueScore&quot;:201},{&quot;matchNumber&quot;:&quot;QM 21&quot;,&quot;predictedTime&quot;:1489865462,&quot;scheduledTime&quot;:1489864320,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[2890,5830,4286],&quot;allies&quot;:[3258,1413,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:165,&quot;blueScore&quot;:255},{&quot;matchNumber&quot;:&quot;QM 26&quot;,&quot;predictedTime&quot;:1489868361,&quot;scheduledTime&quot;:1489867020,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[1610,6194,1908],&quot;allies&quot;:[3258,6213,401],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:215,&quot;blueScore&quot;:160},{&quot;matchNumber&quot;:&quot;QM 30&quot;,&quot;predictedTime&quot;:1489870516,&quot;scheduledTime&quot;:1489869180,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5954,1793,3359],&quot;allies&quot;:[1610,401,620],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:255,&quot;blueScore&quot;:216},{&quot;matchNumber&quot;:&quot;QM 37&quot;,&quot;predictedTime&quot;:1489874402,&quot;scheduledTime&quot;:1489872960,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[1522,1908,3072],&quot;allies&quot;:[401,6213,6021],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:115,&quot;blueScore&quot;:135},{&quot;matchNumber&quot;:&quot;QM 41&quot;,&quot;predictedTime&quot;:1489876444,&quot;scheduledTime&quot;:1489875120,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5954,2363,6213],&quot;allies&quot;:[5830,1522,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:145,&quot;blueScore&quot;:185},{&quot;matchNumber&quot;:&quot;QM 43&quot;,&quot;predictedTime&quot;:0,&quot;scheduledTime&quot;:1489930200,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[1522,2363,4286],&quot;allies&quot;:[1610,2028,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:260,&quot;blueScore&quot;:265},{&quot;matchNumber&quot;:&quot;QM 49&quot;,&quot;predictedTime&quot;:1489933320,&quot;scheduledTime&quot;:1489933440,&quot;bumperColor&quot;:&quot;BLUE&quot;,&quot;opponents&quot;:[5546,6194,1522],&quot;allies&quot;:[401,3258,6021],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:335,&quot;blueScore&quot;:110},{&quot;matchNumber&quot;:&quot;QM 53&quot;,&quot;predictedTime&quot;:1489936203,&quot;scheduledTime&quot;:1489935600,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5957,2028,5546],&quot;allies&quot;:[401,3168,2363],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:260,&quot;blueScore&quot;:211},{&quot;matchNumber&quot;:&quot;QF 1&quot;,&quot;predictedTime&quot;:1489945507,&quot;scheduledTime&quot;:1489944780,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5804,3168,3136],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:230,&quot;blueScore&quot;:200},{&quot;matchNumber&quot;:&quot;QF 2&quot;,&quot;predictedTime&quot;:1489948562,&quot;scheduledTime&quot;:1489946940,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5804,3168,3136],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:165,&quot;blueScore&quot;:175},{&quot;matchNumber&quot;:&quot;QF 3&quot;,&quot;predictedTime&quot;:1489950602,&quot;scheduledTime&quot;:1489949460,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[5804,3168,3136],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:265,&quot;blueScore&quot;:145},{&quot;matchNumber&quot;:&quot;SF 1&quot;,&quot;predictedTime&quot;:1489953727,&quot;scheduledTime&quot;:1489951440,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[620,1137,5954],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;RED&quot;,&quot;redScore&quot;:255,&quot;blueScore&quot;:185},{&quot;matchNumber&quot;:&quot;SF 2&quot;,&quot;predictedTime&quot;:1489955470,&quot;scheduledTime&quot;:1489952520,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[620,1137,5954],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:205,&quot;blueScore&quot;:211},{&quot;matchNumber&quot;:&quot;SF 3&quot;,&quot;predictedTime&quot;:1489956182,&quot;scheduledTime&quot;:1489953960,&quot;bumperColor&quot;:&quot;RED&quot;,&quot;opponents&quot;:[620,1137,5954],&quot;allies&quot;:[2028,435,401],&quot;winner&quot;:&quot;BLUE&quot;,&quot;redScore&quot;:200,&quot;blueScore&quot;:286}],&quot;wins&quot;:11,&quot;losses&quot;:6,&quot;ties&quot;:1,&quot;timeToZero&quot;:2660}}}</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:29.475</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489851500</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:29.484</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:2660,&quot;warnTime&quot;:false,&quot;newTime&quot;:1489851500}}</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:30.476</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489851600</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">09:45:30.491</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">54</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:2560,&quot;warnTime&quot;:false,&quot;newTime&quot;:1489851600}}</td>
+</tr>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Logback Log Messages</title>
+<style  type="text/css">
+table { margin-left: 2em; margin-right: 2em; border-left: 2px solid #AAA; }
+TR.even { background: #FFFFFF; }
+TR.odd { background: #EAEAEA; }
+TR.warn TD.Level, TR.error TD.Level, TR.fatal TD.Level {font-weight: bold; color: #FF4040 }
+TD { padding-right: 1ex; padding-left: 1ex; border-right: 2px solid #AAA; }
+TD.Time, TD.Date { text-align: right; font-family: courier, monospace; font-size: smaller; }
+TD.Thread { text-align: left; }
+TD.Level { text-align: right; }
+TD.Logger { text-align: left; }
+TR.header { background: #596ED5; color: #FFF; font-weight: bold; font-size: larger; }
+TD.Exception { background: #A2AEE8; font-family: courier, monospace;}
+</style>
+
+  </head>
+<body>
+<hr/>
+<p>Log session start time Tue Jun 20 13:53:15 EDT 2017</p><p></p>
+
+<table cellspacing="0">
+<tr class="header">
+<td class="Literal">Literal</td>
+<td class="Date">Date</td>
+<td class="Thread">Thread</td>
+<td class="Level">Level</td>
+<td class="Logger">Logger</td>
+<td class="LineOfCaller">LineOfCaller</td>
+<td class="Message">Message</td>
+</tr>
+
+
+<tr class="info even">
+<td class="Literal">&gt;</td>
+<td class="Date">13:53:15.312</td>
+<td class="Thread">main</td>
+<td class="Level">INFO</td>
+<td class="Logger">ROOT</td>
+<td class="LineOfCaller">47</td>
+<td class="Message">PitCommander Server v1.4-SNAPSHOT</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">13:53:15.317</td>
+<td class="Thread">main</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">ROOT</td>
+<td class="LineOfCaller">50</td>
+<td class="Message">Reading config from file &#39;config.json&#39;</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">13:53:15.432</td>
+<td class="Thread">main</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">ROOT</td>
+<td class="LineOfCaller">52</td>
+<td class="Message">Config loaded</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">13:53:15.472</td>
+<td class="Thread">runtime.poller</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TbaPoller</td>
+<td class="LineOfCaller">49</td>
+<td class="Message">Polling!</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">13:53:15.473</td>
+<td class="Thread">runtime.poller</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TbaPoller</td>
+<td class="LineOfCaller">62</td>
+<td class="Message">Found event: vapor</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">13:53:15.503</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489848600</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">13:53:15.615</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">56</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;GeneralContainerUpdate&quot;,&quot;payload&quot;:{&quot;container&quot;:{&quot;teamNumber&quot;:401,&quot;event&quot;:&quot;vapor&quot;,&quot;teamColor&quot;:&quot;000000&quot;,&quot;teamLogo&quot;:&quot;&quot;}}}</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">13:53:15.616</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">56</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:0,&quot;warnTime&quot;:true,&quot;newTime&quot;:1489848600}}</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">13:53:15.627</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">56</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;MatchChecklistContainerUpdate&quot;,&quot;payload&quot;:{&quot;container&quot;:{&quot;blueSwitchTask&quot;:false,&quot;redSwitchTask&quot;:false,&quot;boxes&quot;:[{&quot;name&quot;:&quot;spinny wheel&quot;,&quot;value&quot;:false},{&quot;name&quot;:&quot;fixy things&quot;,&quot;value&quot;:false}],&quot;allChecked&quot;:false}}}</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">13:53:15.628</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">56</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;SafetyChecklistContainerUpdate&quot;,&quot;payload&quot;:{&quot;container&quot;:{&quot;boxes&quot;:[],&quot;allChecked&quot;:false}}}</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">13:53:15.629</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">56</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;GeneralContainerUpdate&quot;,&quot;payload&quot;:{&quot;container&quot;:{&quot;teamNumber&quot;:401,&quot;event&quot;:&quot;vapor&quot;,&quot;teamColor&quot;:&quot;000000&quot;,&quot;teamLogo&quot;:&quot;&quot;}}}</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">13:53:16.023</td>
+<td class="Thread">runtime.poller</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TbaPoller</td>
+<td class="LineOfCaller">71</td>
+<td class="Message">Matches calculated</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">13:53:16.504</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489848700</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">13:53:16.514</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">56</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:0,&quot;warnTime&quot;:true,&quot;newTime&quot;:1489848700}}</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">13:53:17.504</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489848800</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">13:53:17.522</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">56</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:0,&quot;warnTime&quot;:true,&quot;newTime&quot;:1489848800}}</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">13:53:18.505</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489848900</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">13:53:18.510</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">56</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:0,&quot;warnTime&quot;:true,&quot;newTime&quot;:1489848900}}</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">13:53:19.507</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489849000</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">13:53:19.525</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">56</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:0,&quot;warnTime&quot;:true,&quot;newTime&quot;:1489849000}}</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">13:53:20.508</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489849100</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">13:53:20.513</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">56</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:0,&quot;warnTime&quot;:true,&quot;newTime&quot;:1489849100}}</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">13:53:21.509</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489849200</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">13:53:21.523</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">56</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:0,&quot;warnTime&quot;:true,&quot;newTime&quot;:1489849200}}</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">13:53:22.509</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489849300</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">13:53:22.512</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">56</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:0,&quot;warnTime&quot;:true,&quot;newTime&quot;:1489849300}}</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">13:53:23.510</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489849400</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">13:53:23.520</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">56</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:0,&quot;warnTime&quot;:true,&quot;newTime&quot;:1489849400}}</td>
+</tr>
+
+<tr class="debug even">
+<td class="Literal">&gt;</td>
+<td class="Date">13:53:24.510</td>
+<td class="Thread">runtime.ticker</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.runtime.TimeTicker</td>
+<td class="LineOfCaller">42</td>
+<td class="Message">TIME: 1489849500</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Literal">&gt;</td>
+<td class="Date">13:53:24.528</td>
+<td class="Thread">sock.announce</td>
+<td class="Level">DEBUG</td>
+<td class="Logger">org.pitcommander.socket.AnnounceSock</td>
+<td class="LineOfCaller">56</td>
+<td class="Message">Announce: {&quot;id&quot;:&quot;TimeTick&quot;,&quot;payload&quot;:{&quot;timeToZero&quot;:0,&quot;warnTime&quot;:true,&quot;newTime&quot;:1489849500}}</td>
+</tr>
