@@ -18,6 +18,7 @@ enum class Replies {
     GENERAL_ACK,
     GENERAL_FAIL,
     GENERAL_SUCCESS,
+    PONG,
 
     //GENERAL CONTAINER
     GENERALC_DATA,

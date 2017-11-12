@@ -14,6 +14,7 @@ package org.pitcommander.command
  */
 
 enum class Commands(val group: CommandGroup) {
+    PING(CommandGroup.PING),
 
     //GENERAL
     GENERAL_FETCH(CommandGroup.GENERAL),

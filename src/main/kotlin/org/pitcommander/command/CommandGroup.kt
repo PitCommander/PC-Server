@@ -13,6 +13,7 @@ package org.pitcommander.command
  * @version 5/28/17
  */
 enum class CommandGroup {
+    PING,
     GENERAL,
     MATCH,
     BATTERY,
