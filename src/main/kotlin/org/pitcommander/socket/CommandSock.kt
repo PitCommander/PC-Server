@@ -46,8 +46,9 @@ object CommandSock : Runnable {
                 logger.debug("Got command: $command")
                 try {
                     reply = CommandRouter.route(gson.fromJson(command, Command::class.java))
-                } catch (e: JsonParseException) {
-                    reply = Reply(Replies.GENERAL_FAIL, HashMap<String, Any?>())
+                } catch (e: Exception) {
+                    reply = Reply(Replies.GENERAL_FAIL, hashMapOf("message" to "Error (${e.javaClass.simpleName})"))
+                    logger.error("Exception encountered while routing command '$command'", e)
                 }
                 replyEncoded = gson.toJson(reply)
                 socket.send(replyEncoded)

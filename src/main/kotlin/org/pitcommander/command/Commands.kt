@@ -56,5 +56,20 @@ enum class Commands(val group: CommandGroup) {
     CHECKLIST_GET_SAFETY(CommandGroup.CHECKLIST_SAFETY),
 
     //TV
-    TV_SET(CommandGroup.TV)
+    TV_FETCH(CommandGroup.TV),
+    TV_REGISTER(CommandGroup.TV),
+    TV_GET_REGISTERED(CommandGroup.TV),
+    TV_GET_STATES(CommandGroup.TV),
+    TV_POWER_TOGGLE(CommandGroup.TV),
+    TV_POWER_SET(CommandGroup.TV),
+    TV_POWER_GET(CommandGroup.TV),
+    TV_VOLUME_SET(CommandGroup.TV),
+    TV_VOLUME_INCREMENT(CommandGroup.TV),
+    TV_VOLUME_DECREMENT(CommandGroup.TV),
+    TV_VOLUME_GET(CommandGroup.TV),
+    TV_MUTE_SET(CommandGroup.TV),
+    TV_MUTE_TOGGLE(CommandGroup.TV),
+    TV_MUTE_GET(CommandGroup.TV),
+    TV_CONTENT_SET(CommandGroup.TV),
+    TV_CONTENT_GET(CommandGroup.TV)
 }
