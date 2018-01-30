@@ -34,15 +34,15 @@ object MatchUtils {
         NONE
     }
 
-    fun getTeamAlliance(m: Match, team: Int): AllianceColor {
+    fun getTeamAlliance(m: Match, team: String): AllianceColor {
         if (m.alliances.red.teamKeys != null && m.alliances.blue.teamKeys != null) {
-            for (s in m.alliances.red.teamKeys) if (Integer.parseInt(s.replace("frc", "")) == team) return AllianceColor.RED
-            for (s in m.alliances.blue.teamKeys) if (Integer.parseInt(s.replace("frc", "")) == team) return AllianceColor.BLUE
+            for (s in m.alliances.red.teamKeys) if (s.replace("frc", "") == team) return AllianceColor.RED
+            for (s in m.alliances.blue.teamKeys) if (s.replace("frc", "") == team) return AllianceColor.BLUE
         }
         return AllianceColor.NONE
     }
 
-    fun getOutcome(m: Match, team: Int): Outcome {
+    fun getOutcome(m: Match, team: String): Outcome {
         if (m.alliances.red.score == 0 && m.alliances.blue.score == 0) {
             return Outcome.NONE
         }

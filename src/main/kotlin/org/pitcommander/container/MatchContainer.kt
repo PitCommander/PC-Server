@@ -50,8 +50,8 @@ object MatchContainer : Container() {
         val predictedTime: Long
         val scheduledTime: Long
         val bumperColor: String
-        val opponents = mutableListOf<Int>()
-        val allies = mutableListOf<Int>()
+        val opponents = mutableListOf<String>()
+        val allies = mutableListOf<String>()
         val winner: String
         val redScore: Int
         val blueScore: Int
@@ -75,17 +75,17 @@ object MatchContainer : Container() {
                 }
                 if (bumperColor == "RED") {
                     match.alliances.blue.teamKeys.forEach {
-                        opponents.add(Integer.parseInt(it.replace("frc", "")))
+                        opponents.add(it.replace("frc", ""))
                     }
                     match.alliances.red.teamKeys.forEach {
-                        allies.add(Integer.parseInt(it.replace("frc", "")))
+                        allies.add(it.replace("frc", ""))
                     }
                 } else if (bumperColor == "BLUE") {
                     match.alliances.red.teamKeys.forEach {
-                        opponents.add(Integer.parseInt(it.replace("frc", "")))
+                        opponents.add(it.replace("frc", ""))
                     }
                     match.alliances.blue.teamKeys.forEach {
-                        allies.add(Integer.parseInt(it.replace("frc", "")))
+                        allies.add(it.replace("frc", ""))
                     }
                 }
                 redScore = match.alliances.red.score

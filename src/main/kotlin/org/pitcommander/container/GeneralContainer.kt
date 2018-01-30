@@ -16,12 +16,12 @@ package org.pitcommander.container
 object GeneralContainer : Container() {
     override fun getName() = "General"
 
-    private var teamNumber = 0
+    private var teamNumber = "0"
     private var event = "?"
     private var teamColor = "000000"
     private var teamLogo = ""
 
-    fun setTeamNumber(teamNumber: Int) {
+    fun setTeamNumber(teamNumber: String) {
         synchronized(lock) {
             if (this.teamNumber != teamNumber) {
                 this.teamNumber = teamNumber
@@ -57,7 +57,7 @@ object GeneralContainer : Container() {
         }
     }
 
-    fun getTeamNumber(): Int {
+    fun getTeamNumber(): String {
         synchronized(lock) {
             return teamNumber
         }
