@@ -43,7 +43,7 @@ object MatchUtils {
     }
 
     fun getOutcome(m: Match, team: String): Outcome {
-        if (m.alliances.red.score == 0 && m.alliances.blue.score == 0) {
+        if (m.alliances.red.score == -1 && m.alliances.blue.score == -1) {
             return Outcome.NONE
         }
 
