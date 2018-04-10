@@ -49,32 +49,33 @@ object TbaPoller : Runnable {
     override fun run() {
         while (!Thread.interrupted()) {
             logger.debug("Polling!")
-            if (ActiveConfig.settings.eventCode.toLowerCase() != "dynamic") { //If the configured event is not "auto select"
-                activeEvent = ActiveConfig.settings.eventCode //Set the event code
-            } else { //The configuration calls for auto select
-                val events = Sorters.sortEvents(tba.TeamRequests.getTeamEvents(teamNumber)) //Grab the team events
-                try {
-                    activeEvent = events.last { //Grab the last element in the list where
-                        df.parse(it.startDate).before(Date()) //The current date is before the event start date
-                    }.eventCode.stripNum() //Remove the year from the event code to make it compatible with tba4j
-                } catch (e: NoSuchElementException) { //This is before the first event
-                    activeEvent = events.first().eventCode.stripNum() //Mark the active event as the first event
-                }
-            }
-            logger.debug("Found event: $activeEvent")
-            GeneralContainer.setEvent(activeEvent) //Notify clients of the active event
             try {
+                if (ActiveConfig.settings.eventCode.toLowerCase() != "dynamic") { //If the configured event is not "auto select"
+                    activeEvent = ActiveConfig.settings.eventCode //Set the event code
+                } else { //The configuration calls for auto select
+                    val events = Sorters.sortEvents(tba.TeamRequests.getTeamEvents(teamNumber)) //Grab the team events
+                    try {
+                        activeEvent = events.last {
+                            //Grab the last element in the list where
+                            df.parse(it.startDate).before(Date()) //The current date is before the event start date
+                        }.eventCode.stripNum() //Remove the year from the event code to make it compatible with tba4j
+                    } catch (e: NoSuchElementException) { //This is before the first event
+                        activeEvent = events.first().eventCode.stripNum() //Mark the active event as the first event
+                    }
+                }
+                logger.debug("Found event: $activeEvent")
+                GeneralContainer.setEvent(activeEvent) //Notify clients of the active event
                 matches = tba.TeamRequests.getTeamMatches(teamNumber, activeEvent) //Pull team matches for the event
                 allMatches = tba.EventRequests.getEventMatches(activeEvent) //Pull all matches for the event
                 MatchContainer.updateMatchLists(matches, allMatches)
-            } catch (e: TBAException) {
-                e.printStackTrace()
-            }
-            logger.debug("Matches calculated")
-            try {
-                Thread.sleep(interval)
-            } catch (e: InterruptedException) {
-                Thread.currentThread().interrupt()
+                logger.debug("Matches calculated")
+                try {
+                    Thread.sleep(interval)
+                } catch (e: InterruptedException) {
+                    Thread.currentThread().interrupt()
+                }
+            } catch (e: Exception) {
+                logger.error("Error fetching matches", e)
             }
         }
     }
