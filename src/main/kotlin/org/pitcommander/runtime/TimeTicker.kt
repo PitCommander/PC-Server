@@ -35,7 +35,7 @@ object TimeTicker : Runnable {
 
     override fun run() {
         while (!Thread.interrupted()) {
-            if (debugMode) currentTime.addAndGet(100L)
+            if (debugMode) currentTime.addAndGet(45L)
             else currentTime.set(Instant.now().toEpochMilli() / 1000L)
 
             AnnounceSock.announce(TimeTickAnnouncement(currentTime.get()))

@@ -28,11 +28,17 @@ object TvContainer: Container() {
         var power = false
         var volume = 75
         var muted = false
-        var content = TvContent.LOGO
+        var content = TvContent.SCHEDULE
     }
 
     //EXPOSED DATA
     private val tvs = hashMapOf<String, Tv>()
+
+
+    init {
+        tvs.put("Left", Tv())
+        tvs.put("Right", Tv())
+    }
 
     fun getTvs(): HashMap<String, Tv> {
         synchronized(lock) {
@@ -43,23 +49,6 @@ object TvContainer: Container() {
     fun containsTv(name: String): Boolean {
         synchronized(lock) {
             return tvs.containsKey(name)
-        }
-    }
-
-    fun registerTv(name: String): Boolean {
-        synchronized(lock) {
-            if (!tvs.containsKey(name)) {
-                tvs.put(name, Tv())
-                return true
-            } else {
-                return false
-            }
-        }
-    }
-
-    fun getRegisteredTvs(): List<String> {
-        synchronized(lock) {
-            return tvs.keys.toList()
         }
     }
 

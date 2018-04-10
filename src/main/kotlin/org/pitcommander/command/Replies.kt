@@ -52,7 +52,6 @@ enum class Replies {
 
     //TV
     TV_DATA,
-    TV_REGISTERED,
     TV_STATES,
     TV_POWER,
     TV_VOLUME,

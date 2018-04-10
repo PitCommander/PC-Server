@@ -1,9 +1,11 @@
 package org.pitcommander
 
 import ch.qos.logback.classic.Level
+import org.pitcommander.command.handler.TvHandler
 import org.pitcommander.config.ActiveConfig
 import org.pitcommander.container.GeneralContainer
 import org.pitcommander.container.MatchContainer
+import org.pitcommander.container.TvContainer
 import org.pitcommander.container.checklist.ChecklistContainerBase
 import org.pitcommander.container.checklist.MatchChecklistContainer
 import org.pitcommander.container.checklist.SafetyChecklistContainer
@@ -52,7 +54,7 @@ fun main(args: Array<String>) {
     logger.debug("Config loaded")
 
     //RUNTIME SETUP
-    TimeTicker.setup(1000L, debug, 1489848500) //TODO REMOVE DEBUG TIME
+    TimeTicker.setup(1000L, debug, 1488642500) //TODO REMOVE DEBUG TIME
     TbaPoller.setup(30000L)
     AnnounceSock.setup(5800)
     CommandSock.setup(5801)
@@ -73,6 +75,11 @@ fun main(args: Array<String>) {
     keepAlive@ while (true) {
         when (readLine()?.toUpperCase()) {
             "Q" -> break@keepAlive
+            "STREAM" -> TvContainer.setContent("Left", "STREAM")
+            "SCHEDULE" -> TvContainer.setContent("Left", "SCHEDULE")
+            "TIMER" -> TvContainer.setContent("Left", "TIMER")
+            "SPECS" -> TvContainer.setContent("Left", "SPECS")
+            "LOGO" -> TvContainer.setContent("Left", "LOGO")
         }
     }
 

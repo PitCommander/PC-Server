@@ -57,8 +57,6 @@ enum class Commands(val group: CommandGroup) {
 
     //TV
     TV_FETCH(CommandGroup.TV),
-    TV_REGISTER(CommandGroup.TV),
-    TV_GET_REGISTERED(CommandGroup.TV),
     TV_GET_STATES(CommandGroup.TV),
     TV_POWER_TOGGLE(CommandGroup.TV),
     TV_POWER_SET(CommandGroup.TV),

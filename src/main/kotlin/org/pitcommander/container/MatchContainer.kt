@@ -136,6 +136,15 @@ object MatchContainer : Container() {
         }
     }
 
+    private fun getMatchTime(match: Match?): Long {
+        if (match != null) {
+            return if (ActiveConfig.settings.usePredictedTime) match.predictedTime else match.time
+        }
+        return 0L
+    }
+
+    private fun getMatchTime(matches: List<Match>, i: Int) = getMatchTime(matches[i])
+
     private fun recalc(): Boolean {
         var changed = false //Keep track of our changes
         var updateMatchList = false
@@ -146,7 +155,7 @@ object MatchContainer : Container() {
         var currentlyPlayingIndex = -1
 
         for (i in 0..matches.size - 1) { //Iterate the matches
-            if (matches[i].time >= currentTime && currentMatchIndex == -1) { //If this match occurs after or on the current time (and it's not already set), it is the first current match
+            if (getMatchTime(matches, i) >= currentTime && currentMatchIndex == -1) { //If this match occurs after or on the current time (and it's not already set), it is the first current match
                 currentMatchIndex = i //Set the current match index
                 if (i >= 1) { //If there is data in the array before this index
                     lastMatchIndex = i - 1 //Set the last match to the index before the current match
@@ -159,7 +168,7 @@ object MatchContainer : Container() {
         }
 
         for (i in 0..allMatches.size - 1) { //Iterate all the matches
-            if (allMatches[i].time >= currentTime && currentlyPlayingIndex == -1) { //See above
+            if (getMatchTime(allMatches, i) >= currentTime && currentlyPlayingIndex == -1) { //See above
                 if (allMatches.size > 1) { //If there is more than 1 element in the array
                     currentlyPlayingIndex = i - 1 //Set t
                 } else {
@@ -217,7 +226,7 @@ object MatchContainer : Container() {
             MatchChecklistContainer.reset()
         }
 
-        timeToZero = (iCurrentMatch?.time ?: 0L) - currentTime
+        timeToZero = (getMatchTime(iCurrentMatch)) - currentTime
         if (timeToZero < 0) {
             timeToZero = 0
         }

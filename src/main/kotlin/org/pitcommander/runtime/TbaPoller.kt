@@ -44,6 +44,8 @@ object TbaPoller : Runnable {
     private val df = SimpleDateFormat("yyyy-MM-dd")
 
 
+    //TODO REMOVE DEBUG YEAR
+    //FIXME
     override fun run() {
         while (!Thread.interrupted()) {
             logger.debug("Polling!")

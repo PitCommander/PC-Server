@@ -26,25 +26,6 @@ object TvHandler : Handler() {
                 reply = Replies.TV_DATA
                 payload.put("tvs", TvContainer.getTvs())
             }
-            Commands.TV_REGISTER -> {
-                val name = command.payload["name"] as? String
-                if (name != null) {
-                    if (TvContainer.registerTv(name)) {
-                        reply = Replies.GENERAL_SUCCESS
-                        payload.put("message", "TV '$name' added successfully")
-                    } else {
-                        reply = Replies.GENERAL_FAIL
-                        payload.put("message", "TV '$name' is already registered!")
-                    }
-                } else {
-                    reply = Replies.GENERAL_FAIL
-                    payload.put("message", "Invalid operation")
-                }
-            }
-            Commands.TV_GET_REGISTERED -> {
-                reply = Replies.TV_REGISTERED
-                payload.put("registered", TvContainer.getRegisteredTvs())
-            }
             Commands.TV_GET_STATES -> {
                 reply = Replies.TV_STATES
                 payload.put("states", TvContainer.getContent())
