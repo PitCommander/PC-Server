@@ -79,11 +79,11 @@ object TvHandler : Handler() {
             }
             Commands.TV_VOLUME_SET -> {
                 val name = command.payload["name"] as? String
-                val volume = command.payload["volume"] as? Int
+                val volume = command.payload["volume"] as? Double
                 if (name != null && volume != null) {
-                    if (TvContainer.setVolume(name, volume)) {
+                    if (TvContainer.setVolume(name, volume.toInt())) {
                         reply = Replies.GENERAL_ACK
-                        payload.put("message", "TV '$name' set to volume '$volume'!")
+                        payload.put("message", "TV '$name' set to volume '${volume.toInt()}'!")
                     } else {
                         reply = Replies.GENERAL_FAIL
                         payload.put("message", "TV '$name' not found!")
