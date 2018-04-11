@@ -38,6 +38,7 @@ object CommandSock : Runnable {
         socket.bind("tcp://*:$port")
 
         var command: String?
+        var commandObj: Command
         var reply: Reply
         var replyEncoded: String
         while (!Thread.interrupted()) {
@@ -45,7 +46,9 @@ object CommandSock : Runnable {
             if (command != null) {
                 logger.debug("Got command: $command")
                 try {
-                    reply = CommandRouter.route(gson.fromJson(command, Command::class.java))
+                    commandObj = gson.fromJson(command, Command::class.java)
+                    reply = if (commandObj.id == null) Reply(Replies.GENERAL_FAIL, hashMapOf("message" to "Invalid command: $command"))
+                            else CommandRouter.route(gson.fromJson(command, Command::class.java))
                 } catch (e: Exception) {
                     reply = Reply(Replies.GENERAL_FAIL, hashMapOf("message" to "Error (${e.javaClass.simpleName})"))
                     logger.error("Exception encountered while routing command '$command'", e)
