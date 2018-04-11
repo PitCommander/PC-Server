@@ -73,6 +73,7 @@ fun main(args: Array<String>) {
 
     //CONTAINER INIT
     GeneralContainer.setTeamNumber(ActiveConfig.settings.teamNumber)
+    TvContainer.init()
 
     keepAlive@ while (true) {
         when (readLine()?.toUpperCase()) {

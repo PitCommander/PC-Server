@@ -40,6 +40,10 @@ object TvContainer: Container() {
         tvs.put("Right", Tv())
     }
 
+    fun init() {
+        fireUpdate()
+    }
+
     fun getTvs(): HashMap<String, Tv> {
         synchronized(lock) {
             return tvs
