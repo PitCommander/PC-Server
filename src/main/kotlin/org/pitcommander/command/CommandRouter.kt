@@ -25,6 +25,7 @@ object CommandRouter {
             CommandGroup.GENERAL          -> GeneralHandler
             CommandGroup.MATCH            -> MatchHandler
             CommandGroup.BATTERY          -> BatteryHandler
+            CommandGroup.RANK             -> RankHandler
         }.handle(command)
     }
 }

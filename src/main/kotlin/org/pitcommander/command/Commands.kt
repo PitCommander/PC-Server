@@ -70,5 +70,10 @@ enum class Commands(val group: CommandGroup) {
     TV_MUTE_TOGGLE(CommandGroup.TV),
     TV_MUTE_GET(CommandGroup.TV),
     TV_CONTENT_SET(CommandGroup.TV),
-    TV_CONTENT_GET(CommandGroup.TV)
+    TV_CONTENT_GET(CommandGroup.TV),
+
+    //RANK
+    RANK_FETCH(CommandGroup.RANK),
+    RANK_SCHEMA_GET(CommandGroup.RANK),
+    RANK_RANKINGS_GET(CommandGroup.RANK)
 }

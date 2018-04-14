@@ -2,6 +2,7 @@ package org.pitcommander.util
 
 import net.came20.tba4j.data.Event
 import net.came20.tba4j.data.Match
+import net.came20.tba4j.data.RankingItem
 import java.text.SimpleDateFormat
 
 /*
@@ -28,6 +29,12 @@ object Sorters {
     fun sortMatches(matches: List<Match>): List<Match> {
         return matches.sortedBy {
             it.time
+        }
+    }
+
+    fun sortRankings(rankings: List<RankingItem>): List<RankingItem> {
+        return rankings.sortedBy {
+            it.rank
         }
     }
 }

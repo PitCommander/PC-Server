@@ -19,5 +19,6 @@ enum class CommandGroup {
     BATTERY,
     CHECKLIST_MATCH,
     CHECKLIST_SAFETY,
-    TV
+    TV,
+    RANK
 }

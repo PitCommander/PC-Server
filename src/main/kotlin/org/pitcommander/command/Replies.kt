@@ -57,5 +57,10 @@ enum class Replies {
     TV_POWER,
     TV_VOLUME,
     TV_MUTED,
-    TV_SELECTED
+    TV_SELECTED,
+
+    //RANK
+    RANK_DATA,
+    RANK_SCHEMA,
+    RANK_RANKINGS
 }

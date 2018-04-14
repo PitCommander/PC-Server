@@ -38,6 +38,10 @@ fun String.stripNum(): String {
     return this.replace(Regex("[0-9]"), "")
 }
 
+fun String.stripFrc(): String {
+    return this.replace("frc", "")
+}
+
 fun main(args: Array<String>) {
     var debug = false
     if (args.isNotEmpty()) {

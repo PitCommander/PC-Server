@@ -3,16 +3,17 @@ package org.pitcommander.runtime
 import net.came20.tba4j.TBA
 import net.came20.tba4j.data.Event
 import net.came20.tba4j.data.Match
-import net.came20.tba4j.exception.TBAException
+import net.came20.tba4j.data.RankingItem
+import net.came20.tba4j.data.RankingResponseObject
 import org.pitcommander.config.ActiveConfig
 import org.pitcommander.container.GeneralContainer
 import org.pitcommander.container.MatchContainer
+import org.pitcommander.container.RankContainer
 import org.pitcommander.stripNum
 import org.pitcommander.util.Sorters
-import org.pitcommander.util.StreamUrlBuilder
+import org.pitcommander.util.Builders
 import org.slf4j.LoggerFactory
 import java.text.SimpleDateFormat
-import java.time.Instant
 import java.util.*
 import kotlin.NoSuchElementException
 
@@ -43,6 +44,7 @@ object TbaPoller : Runnable {
     private var matches = listOf<Match>()
     private var allMatches = listOf<Match>()
     private lateinit var event: Event
+    private lateinit var rankings: RankingResponseObject
     private var streamType = ""
     private var streamChannel = ""
     private var streamFile = ""
@@ -88,13 +90,18 @@ object TbaPoller : Runnable {
                     }
                     else -> {
                         streamType = event.webcasts[0]["type"]!! as String
-                        streamUrl = StreamUrlBuilder.buildUrl(streamType,
+                        streamUrl = Builders.buildStreamUrl(streamType,
                                 event.webcasts[0]["file"]!! as? String ?: "",
                                 event.webcasts[0]["channel"] as? String ?: ""
                         )
                     }
                 }
                 GeneralContainer.setStream(streamType, streamUrl)
+
+                //Handle ranking
+                rankings = tba.EventRequests.getEventRankings(activeEvent)
+                RankContainer.setSchema(Builders.buildRankingSchema(rankings.sortOrderInfo))
+                RankContainer.setRankingsFromTba(rankings.rankings)
 
                 logger.debug("Matches calculated")
             } catch (e: Exception) {
