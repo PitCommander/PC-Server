@@ -22,6 +22,7 @@ enum class Commands(val group: CommandGroup) {
     GENERAL_GET_EVENT(CommandGroup.GENERAL),
     GENERAL_GET_COLOR(CommandGroup.GENERAL),
     GENERAL_GET_LOGO(CommandGroup.GENERAL),
+    GENERAL_GET_STREAM(CommandGroup.GENERAL),
 
     //MATCH
     MATCH_FETCH(CommandGroup.MATCH),

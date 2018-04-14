@@ -9,6 +9,7 @@ import org.pitcommander.container.GeneralContainer
 import org.pitcommander.container.MatchContainer
 import org.pitcommander.stripNum
 import org.pitcommander.util.Sorters
+import org.pitcommander.util.StreamUrlBuilder
 import org.slf4j.LoggerFactory
 import java.text.SimpleDateFormat
 import java.time.Instant
@@ -41,6 +42,11 @@ object TbaPoller : Runnable {
     private var activeEvent = "" //The event code of the active event
     private var matches = listOf<Match>()
     private var allMatches = listOf<Match>()
+    private lateinit var event: Event
+    private var streamType = ""
+    private var streamChannel = ""
+    private var streamFile = ""
+    private var streamUrl = ""
     private val df = SimpleDateFormat("yyyy-MM-dd")
 
 
@@ -68,14 +74,36 @@ object TbaPoller : Runnable {
                 matches = tba.TeamRequests.getTeamMatches(teamNumber, activeEvent) //Pull team matches for the event
                 allMatches = tba.EventRequests.getEventMatches(activeEvent) //Pull all matches for the event
                 MatchContainer.updateMatchLists(matches, allMatches)
-                logger.debug("Matches calculated")
-                try {
-                    Thread.sleep(interval)
-                } catch (e: InterruptedException) {
-                    Thread.currentThread().interrupt()
+
+                //Handle stream
+                event = tba.EventRequests.getEvent(activeEvent)
+                when {
+                    event.webcasts.isEmpty() -> {
+                        streamType = "none"
+                        streamUrl = ""
+                    }
+                    ActiveConfig.settings.streamUrl.isNotBlank() -> {
+                        streamType = "url"
+                        streamUrl = ActiveConfig.settings.streamUrl
+                    }
+                    else -> {
+                        streamType = event.webcasts[0]["type"]!! as String
+                        streamUrl = StreamUrlBuilder.buildUrl(streamType,
+                                event.webcasts[0]["file"]!! as? String ?: "",
+                                event.webcasts[0]["channel"] as? String ?: ""
+                        )
+                    }
                 }
+                GeneralContainer.setStream(streamType, streamUrl)
+
+                logger.debug("Matches calculated")
             } catch (e: Exception) {
                 logger.error("Error fetching matches", e)
+            }
+            try {
+                Thread.sleep(interval)
+            } catch (e: InterruptedException) {
+                Thread.currentThread().interrupt()
             }
         }
     }

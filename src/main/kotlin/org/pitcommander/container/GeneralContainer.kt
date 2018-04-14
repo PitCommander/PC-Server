@@ -16,10 +16,20 @@ package org.pitcommander.container
 object GeneralContainer : Container() {
     override fun getName() = "General"
 
+    enum class StreamType {
+        LIVESTREAM,
+        TWITCH,
+        YOUTUBE,
+        URL,
+        NONE
+    }
+
     private var teamNumber = "0"
     private var event = "?"
     private var teamColor = "000000"
     private var teamLogo = ""
+    private var streamType = StreamType.NONE
+    private var streamVideo = ""
 
     fun setTeamNumber(teamNumber: String) {
         synchronized(lock) {
@@ -57,6 +67,23 @@ object GeneralContainer : Container() {
         }
     }
 
+    fun setStream(type: String, video: String) {
+        val sType = when (type.toUpperCase()) {
+            "LIVESTREAM" -> StreamType.LIVESTREAM
+            "TWITCH" -> StreamType.TWITCH
+            "YOUTUBE" -> StreamType.YOUTUBE
+            "URL" -> StreamType.URL
+            else -> StreamType.NONE
+        }
+        synchronized(lock) {
+            if (streamType != sType || streamVideo != video) {
+                streamType = sType
+                streamVideo = video
+                fireUpdate()
+            }
+        }
+    }
+
     fun getTeamNumber(): String {
         synchronized(lock) {
             return teamNumber
@@ -78,6 +105,18 @@ object GeneralContainer : Container() {
     fun getTeamLogo(): String {
         synchronized(lock) {
             return teamLogo
+        }
+    }
+
+    fun getStreamType(): StreamType {
+        synchronized(lock) {
+            return streamType
+        }
+    }
+
+    fun getStreamVideo(): String {
+        synchronized(lock) {
+            return streamVideo
         }
     }
 }

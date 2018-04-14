@@ -27,6 +27,8 @@ object GeneralHandler : Handler() {
                 payload.put("event", GeneralContainer.getEvent())
                 payload.put("teamColor", GeneralContainer.getTeamColor())
                 payload.put("teamLogo", GeneralContainer.getTeamLogo())
+                payload.put("streamType", GeneralContainer.getStreamType())
+                payload.put("streamVideo", GeneralContainer.getStreamVideo())
             }
             Commands.GENERAL_GET_TEAM -> {
                 reply = Replies.GENERALC_TEAM
@@ -43,6 +45,11 @@ object GeneralHandler : Handler() {
             Commands.GENERAL_GET_LOGO -> {
                 reply = Replies.GENERALC_LOGO
                 payload.put("teamLogo", GeneralContainer.getTeamLogo())
+            }
+            Commands.GENERAL_GET_STREAM -> {
+                reply = Replies.GENERALC_STREAM
+                payload.put("streamType", GeneralContainer.getStreamType())
+                payload.put("streamVideo", GeneralContainer.getStreamVideo())
             }
         }
     }

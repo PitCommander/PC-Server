@@ -26,6 +26,7 @@ enum class Replies {
     GENERALC_EVENT,
     GENERALC_COLOR,
     GENERALC_LOGO,
+    GENERALC_STREAM,
 
     //MATCH
     MATCH_DATA,
