@@ -18,7 +18,7 @@ object RankContainer: Container() {
     data class RankElement(val rank: Int,
                            val team: String,
                            val name: String,
-                           val gameData: Map<String, Any>)
+                           val gameData: List<Any>)
 
     private var schema = arrayListOf<SchemaElement>()
     private var rankings = arrayListOf<RankElement>()
@@ -40,23 +40,10 @@ object RankContainer: Container() {
         }
     }
 
-    fun setRankingsFromTba(rankings: List<RankingItem>) {
+    fun setRankings(rankings: ArrayList<RankElement>) {
         synchronized(lock) {
-            val sorted = Sorters.sortRankings(rankings)
-            val list = arrayListOf<RankContainer.RankElement>()
-            val schema = itemizeSchema()
-            sorted.forEach {
-                item ->
-                var schemaIdx = 0
-                list.add(RankContainer.RankElement(
-                        item.rank,
-                        item.teamKey.stripFrc(),
-                        "PRESTON SUX", //TODO fix this maybe? probably not. it'll be pretty funny
-                        item.sortOrders.associateBy { schema[schemaIdx++] }
-                ))
-            }
-            if (this.rankings != list) {
-                this.rankings = list
+            if (this.rankings != rankings) {
+                this.rankings = rankings
                 fireUpdate()
             }
         }

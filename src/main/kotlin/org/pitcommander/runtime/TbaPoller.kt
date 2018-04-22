@@ -1,10 +1,7 @@
 package org.pitcommander.runtime
 
 import net.came20.tba4j.TBA
-import net.came20.tba4j.data.Event
-import net.came20.tba4j.data.Match
-import net.came20.tba4j.data.RankingItem
-import net.came20.tba4j.data.RankingResponseObject
+import net.came20.tba4j.data.*
 import org.pitcommander.config.ActiveConfig
 import org.pitcommander.container.GeneralContainer
 import org.pitcommander.container.MatchContainer
@@ -44,10 +41,9 @@ object TbaPoller : Runnable {
     private var matches = listOf<Match>()
     private var allMatches = listOf<Match>()
     private lateinit var event: Event
+    private var teams = listOf<Team>()
     private lateinit var rankings: RankingResponseObject
     private var streamType = ""
-    private var streamChannel = ""
-    private var streamFile = ""
     private var streamUrl = ""
     private val df = SimpleDateFormat("yyyy-MM-dd")
 
@@ -89,10 +85,10 @@ object TbaPoller : Runnable {
                         streamUrl = ActiveConfig.settings.streamUrl
                     }
                     else -> {
-                        streamType = event.webcasts[0]["type"]!! as String
+                        streamType = event.webcasts[0].getOrDefault("type", "none") as String
                         streamUrl = Builders.buildStreamUrl(streamType,
-                                event.webcasts[0]["file"]!! as? String ?: "",
-                                event.webcasts[0]["channel"] as? String ?: ""
+                                event.webcasts[0].getOrDefault("file", "") as String,
+                                event.webcasts[0].getOrDefault("channel", "") as String
                         )
                     }
                 }
@@ -100,8 +96,9 @@ object TbaPoller : Runnable {
 
                 //Handle ranking
                 rankings = tba.EventRequests.getEventRankings(activeEvent)
+                teams = tba.EventRequests.getEventTeams(activeEvent)
                 RankContainer.setSchema(Builders.buildRankingSchema(rankings.sortOrderInfo))
-                RankContainer.setRankingsFromTba(rankings.rankings)
+                RankContainer.setRankings(Builders.buildRankings(rankings, teams))
 
                 logger.debug("Matches calculated")
             } catch (e: Exception) {

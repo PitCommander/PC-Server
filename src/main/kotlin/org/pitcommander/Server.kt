@@ -60,7 +60,7 @@ fun main(args: Array<String>) {
     logger.debug("Config loaded")
 
     //RUNTIME SETUP
-    TimeTicker.setup(1000L, debug, 1488642500) //TODO REMOVE DEBUG TIME
+    TimeTicker.setup(1000L, debug)
     TbaPoller.setup(30000L)
     AnnounceSock.setup(5800)
     CommandSock.setup(5801)

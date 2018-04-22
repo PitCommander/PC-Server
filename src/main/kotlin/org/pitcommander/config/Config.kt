@@ -18,7 +18,7 @@ import java.io.File
  */
 
 object ActiveConfig {
-    var settings = ConfigRoot("0", "dynamic", "", 300, "", true, listOf(), listOf(), "", "000000", ""); private set
+    var settings = ConfigRoot(); private set
     private val gson = GsonBuilder()
                         .setPrettyPrinting()
                         .setLenient()
@@ -49,15 +49,15 @@ object ActiveConfig {
     }
 }
 
-data class ConfigRoot(val teamNumber: String,
-                      val eventCode: String,
-                      val streamUrl: String,
-                      val matchWarnTime: Long,
-                      val tbaApiKey: String,
-                      val usePredictedTime: Boolean,
-                      val matchChecklist: List<String>,
-                      val safetyChecklist: List<String>,
-                      val reflectorAddress: String,
-                      val teamColor: String,
-                      val teamLogo: String)
+data class ConfigRoot(val teamNumber: String = "0",
+                      val eventCode: String = "dynamic",
+                      val streamUrl: String = "",
+                      val matchWarnTime: Long = 300,
+                      val tbaApiKey: String = "",
+                      val usePredictedTime: Boolean = false,
+                      val matchChecklist: List<String> = listOf(),
+                      val safetyChecklist: List<String> = listOf(),
+                      val reflectorAddress: String = "",
+                      val teamColor: String = "000000",
+                      val teamLogo: String = "")
 
