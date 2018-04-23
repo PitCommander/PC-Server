@@ -97,8 +97,10 @@ object TbaPoller : Runnable {
                 //Handle ranking
                 rankings = tba.EventRequests.getEventRankings(activeEvent)
                 teams = tba.EventRequests.getEventTeams(activeEvent)
-                RankContainer.setSchema(Builders.buildRankingSchema(rankings.sortOrderInfo))
-                RankContainer.setRankings(Builders.buildRankings(rankings, teams))
+                RankContainer.setFromTba(
+                        Builders.buildRankingSchema(rankings.sortOrderInfo),
+                        Builders.buildRankings(rankings, teams)
+                )
 
                 logger.debug("Matches calculated")
             } catch (e: Exception) {

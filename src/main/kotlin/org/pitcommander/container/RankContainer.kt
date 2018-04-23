@@ -55,4 +55,12 @@ object RankContainer: Container() {
         }
     }
 
+    fun setFromTba(schema: ArrayList<SchemaElement>, rankings: ArrayList<RankElement>) {
+        synchronized(lock) {
+            this.schema = schema
+            this.rankings = rankings
+            fireUpdate()
+        }
+    }
+
 }
