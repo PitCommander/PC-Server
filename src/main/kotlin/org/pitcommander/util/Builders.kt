@@ -25,7 +25,7 @@ object Builders {
     }
 
     fun buildRankings(rankingsResponse: RankingResponseObject, teams: List<Team>): ArrayList<RankContainer.RankElement> {
-        fun getTeamName(teamKey: String) = teams.firstOrNull { it.teamNumber == teamKey.stripFrc().toIntOrNull() }?.name ?: "ERROR"
+        fun getTeamName(teamKey: String) = teams.firstOrNull { it.teamNumber == teamKey.stripFrc().toIntOrNull() }?.nickname ?: "ERROR"
 
         val list = arrayListOf<RankContainer.RankElement>()
         val rankings = Sorters.sortRankings(rankingsResponse.rankings)
