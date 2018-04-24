@@ -34,7 +34,7 @@ object Builders {
                     it.rank,
                     it.teamKey.stripFrc(),
                     getTeamName(it.teamKey),
-                    it.sortOrders
+                    it.sortOrders.map { RankContainer.RankValueWrapper(it) }
             ))
         }
         return list

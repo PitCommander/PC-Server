@@ -20,6 +20,8 @@ object RankContainer: Container() {
                            val name: String,
                            val gameData: List<Any>)
 
+    data class RankValueWrapper(val value: Double)
+
     private var schema = arrayListOf<SchemaElement>()
     private var rankings = arrayListOf<RankElement>()
 
