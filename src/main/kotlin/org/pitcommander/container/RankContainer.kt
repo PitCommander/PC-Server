@@ -18,6 +18,7 @@ object RankContainer: Container() {
     data class RankElement(val rank: Int,
                            val team: String,
                            val name: String,
+                           val record: String,
                            val gameData: List<Any>)
 
     data class RankValueWrapper(val value: Double)

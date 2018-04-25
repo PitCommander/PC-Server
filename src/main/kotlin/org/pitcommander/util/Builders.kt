@@ -34,6 +34,7 @@ object Builders {
                     it.rank,
                     it.teamKey.stripFrc(),
                     getTeamName(it.teamKey),
+                    "${it.record.wins}-${it.record.losses}-${it.record.ties}",
                     it.sortOrders.map { RankContainer.RankValueWrapper(it) }
             ))
         }
